@@ -1,9 +1,9 @@
-import VideoCarousel from "@/components/video-carousel"
-import AnimatedText from "@/components/animated-text"
-import ArtistShowcase from "@/components/artist-showcase"
-import BookingSection from "@/components/booking-section"
-import EventsList from "@/components/events-list"
-import Footer from "@/components/footer"
+import VideoCarousel from "@/components/video-carousel";
+import AnimatedText from "@/components/animated-text";
+import ArtistShowcase from "@/components/artist-showcase";
+import BookingSection from "@/components/booking-section";
+import EventsList from "@/components/events-list";
+import Footer from "@/components/footer";
 
 export default function HomePage() {
   return (
@@ -12,7 +12,7 @@ export default function HomePage() {
       <VideoCarousel />
 
       {/* Animated text section */}
-      <AnimatedText />
+      {/* <AnimatedText /> */}
 
       {/* Artist showcase */}
       <ArtistShowcase />
@@ -24,5 +24,5 @@ export default function HomePage() {
       {/* Animated footer */}
       <Footer />
     </main>
-  )
+  );
 }

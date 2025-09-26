@@ -75,7 +75,7 @@ export default function VivekMorvadiaEPK() {
                 <p>PLAYBACK / LIVE CONCERTS / WEDDINGS</p>
                 <p>GUJARATI / BOLLYWOOD / FOLK</p>
                 <p>ORIGINAL MUSIC / COLLABORATIONS</p>
-                <p>1000+ SHOWS / KUSHAL CHOKSHI</p>
+                <p>2000+ SHOWS / KUSHAL CHOKSHI</p>
                 <p>CLASSICAL / POP / EXPERIMENTAL</p>
               </div>
             </div>
