@@ -1,0 +1,53 @@
+name: Deploy to Production
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Deploy to server
+      uses: appleboy/ssh-action@v1.0.3
+      with:
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USERNAME }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        script: |
+          set -e
+          echo "🚀 Starting deployment..."
+          
+          cd /var/www/demo/billion-entertainment
+          git pull origin main
+          npm install
+          
+          echo "🛑 Stopping existing app..."
+          pm2 delete billion-entertainment || true
+          
+          echo "🏗️ Building..."
+          npm run build
+          
+          echo "▶️ Starting app..."
+          pm2 start npm --name "billion-entertainment" -- start
+          pm2 save
+          
+          # Wait a moment for app to start
+          sleep 5
+          
+          echo "📊 === DEPLOYMENT STATUS ==="
+          echo ""
+          echo "📋 PM2 List:"
+          pm2 list
+          echo ""
+          echo "🔍 PM2 Status:"
+          pm2 status
+          echo ""
+          echo "💻 Process Info:"
+          pm2 describe billion-entertainment
+          echo ""
+          echo "✅ Deployment completed successfully!"
