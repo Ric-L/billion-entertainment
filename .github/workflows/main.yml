@@ -2,52 +2,53 @@ name: Deploy to Production
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    
+
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
-      
-    - name: Deploy to server
-      uses: appleboy/ssh-action@v1.0.3
-      with:
-        host: ${{ secrets.SSH_HOST }}
-        username: ${{ secrets.SSH_USERNAME }}
-        key: ${{ secrets.SSH_PRIVATE_KEY }}
-        script: |
-          set -e
-          echo "🚀 Starting deployment..."
-          
-          cd /var/www/demo/billion-entertainment
-          git pull origin main
-          npm install
-          
-          echo "🛑 Stopping existing app..."
-          pm2 delete billion-entertainment || true
-          
-          echo "🏗️ Building..."
-          npm run build
-          
-          echo "▶️ Starting app..."
-          pm2 start npm --name "billion-entertainment" -- start
-          pm2 save
-          
-          # Wait a moment for app to start
-          sleep 5
-          
-          echo "📊 === DEPLOYMENT STATUS ==="
-          echo ""
-          echo "📋 PM2 List:"
-          pm2 list
-          echo ""
-          echo "🔍 PM2 Status:"
-          pm2 status
-          echo ""
-          echo "💻 Process Info:"
-          pm2 describe billion-entertainment
-          echo ""
-          echo "✅ Deployment completed successfully!"
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Deploy to server
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }} # 185.199.52.20
+          username: ${{ secrets.SSH_USERNAME }} # root
+          key: ${{ secrets.SSH_PRIVATE_KEY }} # Your private key
+          port: 22
+          script: |
+            set -e
+            echo "🚀 Starting deployment to server..."
+
+            echo "📁 Changing to project directory..."
+            cd /var/www/demo/billion-entertainment
+
+            echo "📥 Pulling latest changes..."
+            git pull origin main
+
+            echo "📦 Installing dependencies..."
+            npm install
+
+            echo "🛑 Stopping existing application..."
+            pm2 delete billion-entertainment || echo "ℹ️  No existing process found - continuing..."
+
+            echo "🏗️ Building application..."
+            npm run build
+
+            echo "▶️ Starting application with PM2..."
+            pm2 start npm --name "billion-entertainment" -- start
+            pm2 save
+
+            echo "✅ Deployment completed!"
+            echo ""
+            echo "📊 === PM2 STATUS ==="
+            pm2 status
+            echo ""
+            echo "📋 === PM2 LIST ==="
+            pm2 list
+            echo ""
+            echo "🔍 === APPLICATION INFO ==="
+            pm2 show billion-entertainment
