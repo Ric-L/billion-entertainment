@@ -29,7 +29,7 @@ jobs:
           script: |
             echo "🚀 Connected successfully to $(hostname)"
             echo "📁 Changing to project directory..."
-            cd /var/www/demo/billion-entertainment
+            cd /var/www/apps/demo/billion-entertainment
 
             echo "📥 Pulling latest changes..."
             git pull origin main
@@ -38,13 +38,16 @@ jobs:
             npm install
 
             echo "🛑 Stopping existing application..."
-            pm2 delete billion-entertainment || echo "ℹ️ No existing process found"
+            pm2 stop billiont-ent  || echo "ℹ️ No existing process found"
+
+            echo "🛑 Deleting existing application..."
+            pm2 delete billiont-ent  || echo "ℹ️ No existing process found"
 
             echo "🏗️ Building application..."
             npm run build
 
             echo "▶️ Starting application..."
-            pm2 start npm --name "billion-entertainment" -- start
+            pm2 start npm --name billiont-ent -- start
             pm2 save
 
             echo "✅ Deployment completed!"
