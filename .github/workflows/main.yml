@@ -20,6 +20,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
           script: |
+
             echo "✅ SSH Connection successful!"
             echo "Server: $(hostname)"
             echo "Date: $(date)"
