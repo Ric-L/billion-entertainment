@@ -12,7 +12,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Test SSH connection
+      - name: Debug - Show secrets are set (but hide values)
+        run: |
+          echo "SSH_HOST is set: ${{ secrets.SSH_HOST != '' }}"
+          echo "SSH_USERNAME is set: ${{ secrets.SSH_USERNAME != '' }}"
+          echo "SSH_PRIVATE_KEY is set: ${{ secrets.SSH_PRIVATE_KEY != '' }}"
+          echo "SSH_HOST length: ${#SSH_HOST}"  # This will show 0 if not set
+
+      - name: Deploy to server
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.SSH_HOST }}
@@ -20,7 +27,25 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
           script: |
+            echo "🚀 Connected successfully to $(hostname)"
+            echo "📁 Changing to project directory..."
+            cd /var/www/demo/billion-entertainment
 
-            echo "✅ SSH Connection successful!"
-            echo "Server: $(hostname)"
-            echo "Date: $(date)"
+            echo "📥 Pulling latest changes..."
+            git pull origin main
+
+            echo "📦 Installing dependencies..."
+            npm install
+
+            echo "🛑 Stopping existing application..."
+            pm2 delete billion-entertainment || echo "ℹ️ No existing process found"
+
+            echo "🏗️ Building application..."
+            npm run build
+
+            echo "▶️ Starting application..."
+            pm2 start npm --name "billion-entertainment" -- start
+            pm2 save
+
+            echo "✅ Deployment completed!"
+            pm2 status
