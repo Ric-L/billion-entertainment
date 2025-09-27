@@ -12,20 +12,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Deploy to server
+      - name: Test SSH connection
         uses: appleboy/ssh-action@v1.0.3
         with:
-          host: "185.199.52.20" # Hardcoded for testing
-          username: "root" # Hardcoded for testing
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
           script: |
-            echo "🚀 Connected to server!"
-            cd /var/www/demo/billion-entertainment
-            git pull origin main
-            npm install
-            pm2 delete billion-entertainment || true
-            npm run build
-            pm2 start npm --name "billion-entertainment" -- start
-            pm2 save
-            pm2 status
+            echo "✅ SSH Connection successful!"
+            echo "Server: $(hostname)"
+            echo "Date: $(date)"
