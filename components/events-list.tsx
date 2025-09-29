@@ -76,15 +76,16 @@ export default function EventsList() {
       ref={sectionRef}
       className={`min-h-screen px-4 py-20 transition-all duration-1000 ease-out relative ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"}`}
       style={{
-        background: "linear-gradient(135deg, rgb(0, 0, 0) 0%, rgb(88, 28, 135) 50%, rgb(0, 0, 0) 100%)",
+        // background: "linear-gradient(135deg, rgb(0, 0, 0) 0%, rgb(88, 28, 135) 50%, rgb(0, 0, 0) 100%)",
+        background: "white",
       }}
     >
-      <div className="absolute inset-0 bg-black/30"></div>
+      <div className="absolute inset-0 blur-md"></div>
 
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-5xl md:text-7xl font-bold text-white mb-6 drop-shadow-2xl" style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.8)" }}>
-            <span className="bg-gradient-to-r from-amber-400 to-purple-400 bg-clip-text text-transparent animate-pulse">Upcoming Events</span>
+            <span className="text-slate-700">Upcoming Events</span>
           </h2>
           <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto leading-relaxed drop-shadow-lg" style={{ textShadow: "1px 1px 2px rgba(0,0,0,0.8)" }}>
             Don't miss out on these incredible performances by our sponsored artists

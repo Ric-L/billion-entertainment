@@ -14,9 +14,24 @@ const artists = [
     bio: "Beyond covers and live performances, Vivek has also ventured into the realm of original music. His portfolio includes two original Gujarati songs, both of which reflect his deep cultural roots, showcasing his commitment to contributing to regional music while pushing artistic boundaries.",
     social: {
       instagram: "https://www.instagram.com/vivek_morvadia?igsh=YTRxajIybTBoZWpw",
-      youtube: "https://youtube.com/@billionentertainment?si=9QslQtbcKV-hM7vk",
+      youtube: "https://www.youtube.com/@BillionEntertainment",
     },
   },
+  //   {
+  //     id: 2,
+  //     name: "Viss Ningthouja",
+  //     image: "/vis2.JPG",
+  //     bio: `Viss Ningthouja is an electronic and dubstep singer, composer and producer from Imphal, India, whose music fuses deep basslines, intricate rhythms, and ethereal textures with cultural influences from his roots.
+
+  // With a growing catalog, Ningthouja has earned recognition for tracks such as Saayon, Saayon 2.0, Saayon 3.0, Kuru, Sara, Lamlen and also his recent releases including Saayon 4.0, Aura, which showcased his versatility in blending electronic and dubstep with traditional elements. With more than 52.4M views on music platforms, Saayon captures the hearts of millions.
+  // Adding to his musical journey, his international collaboration with Anxmus and many more has further enriched Ningthouja’s dynamic sound and expanded his creative horizons.
+
+  // Each release showcases Ningthouja’s talent for crafting bold, genre-defying music that’s both emotionally stirring and sonically innovative, earning over 20M total views.`,
+  //     social: {
+  //       instagram: "https://www.instagram.com/viss_ningthouja_?igsh=MW41bm42MGRmcnJlNw==", // placeholder
+  //       youtube: "https://www.youtube.com/@vissningthouja", // placeholder
+  //     },
+  //   },
 ];
 
 export default function ArtistShowcase() {
