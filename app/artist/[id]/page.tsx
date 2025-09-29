@@ -90,7 +90,7 @@ export default function VivekMorvadiaEPK() {
               </p>
             </div>
 
-            <div className="space-y-6 pt-8 border-t border-white/20">
+            <div className="space-y-6 hidden lg:block pt-8 border-t border-white/20">
               <h3 className="text-xl font-semibold tracking-wider text-white/90">ARTIST DETAILS</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-white/70">
                 <div className="backdrop-blur-sm bg-white/5 p-3 rounded-lg">
@@ -110,9 +110,6 @@ export default function VivekMorvadiaEPK() {
                   <p>2000+ Shows</p>
                 </div>
               </div>
-              <div className="w-full max-w-xs mx-auto h-[500px] rounded-lg overflow-hidden relative shadow-2xl lg:hidden">
-                <Image src="/1.png" alt="Vivek Morvadia Portrait" fill className="object-cover object-left md:scale-90 " sizes="(max-width: 640px) 100vw, 20rem" />
-              </div>
             </div>
 
             {/* Social Media Links */}
@@ -122,6 +119,30 @@ export default function VivekMorvadiaEPK() {
         </div>
         <div className="absolute right-8 top-1/2 transform -translate-y-1/2 rotate-90 text-xs tracking-widest text-white/40 z-10 hidden lg:block">VIVEK MORVADIA</div>
       </section>
+      <div className="space-y-6 pt-8  mt-16 p-8 rounded lg:hidden block">
+        <h3 className="text-xl font-semibold tracking-wider text-white/90">ARTIST DETAILS</h3>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-white/70">
+          <div className="backdrop-blur-sm bg-white/5 p-3 rounded-lg">
+            <p className="font-medium text-white/90">LOCATION</p>
+            <p>Bodaka, Gujarat, India</p>
+          </div>
+          <div className="backdrop-blur-sm bg-white/5 p-3 rounded-lg">
+            <p className="font-medium text-white/90">GENRES</p>
+            <p>Gujarati, Bollywood, Folk</p>
+          </div>
+          <div className="backdrop-blur-sm bg-white/5 p-3 rounded-lg">
+            <p className="font-medium text-white/90">SERVICES</p>
+            <p>Playback, Live Concerts, Weddings</p>
+          </div>
+          <div className="backdrop-blur-sm bg-white/5 p-3 rounded-lg">
+            <p className="font-medium text-white/90">EXPERIENCE</p>
+            <p>2000+ Shows</p>
+          </div>
+        </div>
+      </div>
+      <div className="w-full max-w-xs mx-auto h-[500px] rounded-lg overflow-hidden relative shadow-2xl lg:hidden">
+        <Image src="/1.png" alt="Vivek Morvadia Portrait" fill className="object-cover object-left md:scale-90 " sizes="(max-width: 640px) 100vw, 20rem" />
+      </div>
 
       {/* Media Section */}
       <section className="min-h-screen bg-gradient-to-t from-black via-slate-900 to-slate-800 p-8">
