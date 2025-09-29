@@ -61,7 +61,7 @@ export default function VivekMorvadiaEPK() {
       </section>
 
       {/* Biography Section */}
-      <section className="relative min-h-screen bg-black p-8 overflow-hidden">
+      <section className=" bg-gray-800 relative min-h-screen lg:bg-black p-8 overflow-hidden">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <div className="relative w-full h-full">
@@ -73,7 +73,7 @@ export default function VivekMorvadiaEPK() {
 
         {/* Content */}
         <div className="relative z-10 max-w-7xl mx-auto flex justify-center md:justify-end">
-          <div className="w-full lg:w-auto lg:max-w-2xl space-y-8 md:space-y-14 mt-16 p-4 rounded md:bg-gray-800 mx-auto md:ml-auto md:mr-[50px]">
+          <div className="w-full lg:w-auto lg:max-w-2xl space-y-8 md:space-y-14 mt-16 p-4 rounded bg-gray-800 mx-auto md:ml-auto md:mr-[50px]">
             <h2 className="text-3xl md:text-5xl font-bold tracking-wider text-white">BIOGRAPHY</h2>
             <div className="space-y-6">
               <p className="text-base sm:text-lg leading-relaxed text-white/90 max-w-lg backdrop-blur-sm bg-white/5 p-4 rounded-lg">
@@ -110,6 +110,9 @@ export default function VivekMorvadiaEPK() {
                   <p>2000+ Shows</p>
                 </div>
               </div>
+              <div className="w-full max-w-xs mx-auto h-[500px] rounded-lg overflow-hidden relative shadow-2xl lg:hidden">
+                <Image src="/1.png" alt="Vivek Morvadia Portrait" fill className="object-cover object-left md:scale-90 " sizes="(max-width: 640px) 100vw, 20rem" />
+              </div>
             </div>
 
             {/* Social Media Links */}
@@ -119,9 +122,7 @@ export default function VivekMorvadiaEPK() {
         </div>
         <div className="absolute right-8 top-1/2 transform -translate-y-1/2 rotate-90 text-xs tracking-widest text-white/40 z-10 hidden lg:block">VIVEK MORVADIA</div>
       </section>
-      <div className="w-full max-w-xs mx-auto h-[500px] rounded-lg overflow-hidden relative shadow-2xl lg:hidden">
-        <Image src="/1.png" alt="Vivek Morvadia Portrait" fill className="object-cover object-left md:scale-90 " sizes="(max-width: 640px) 100vw, 20rem" />
-      </div>
+
       {/* Media Section */}
       <section className="min-h-screen bg-gradient-to-t from-black via-slate-900 to-slate-800 p-8">
         <div className="max-w-7xl mx-auto flex flex-wrap gap-12 items-start">
