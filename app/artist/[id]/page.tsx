@@ -67,7 +67,7 @@ export default function VivekMorvadiaEPK() {
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <div className="relative w-full h-full">
-            <Image src="/u12.png" alt="Vivek Morvadia Portrait" fill priority className="object-cover object-center md:object-left scale-105 md:ml-[100px] ml-0" />
+            <Image src="/u12.png" alt="Vivek Morvadia Portrait" fill priority className="object-cover object-center md:object-left scale-90 -ml-[120px] " />
             <div className="absolute inset-0 "></div>
             <div className="absolute inset-0 "></div>
           </div>
@@ -127,72 +127,66 @@ export default function VivekMorvadiaEPK() {
 
       {/* Media Section */}
       <section className="min-h-screen bg-gradient-to-t from-black via-slate-900 to-slate-800 p-8">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-          <div className="hidden md:block"></div>
-
-          <div className="space-y-8">
-            <div className="space-y-4">
-              <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center">
-                  <Play className="w-6 h-6 text-white" />
-                </div>
-                <span className="text-2xl font-bold">Showcase</span>
+        <div className="max-w-7xl mx-auto flex flex-wrap gap-12 items-start">
+          {/* Showreel */}
+          <div className="w-full md:w-[48%] space-y-4">
+            <div className="flex items-center space-x-4">
+              <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center">
+                <Play className="w-6 h-6 text-white" />
               </div>
-              {/* Add HTML5 video player for /public/vivekreel.mp4 with mobile-friendly autoplay */}
-              <div className="rounded-xl overflow-hidden shadow-2xl">
-                <div className="relative w-full aspect-video">
-                  <video className="absolute inset-0 w-full h-full object-cover" src="/vivekreel.mp4" controls playsInline muted autoPlay loop aria-label="Vivek Morvadia video reel" />
-                </div>
+              <span className="text-2xl font-bold">Showreel</span>
+            </div>
+            <div className="rounded-xl overflow-hidden shadow-2xl">
+              <div className="relative w-full aspect-video">
+                <video className="absolute inset-0 w-full h-full object-cover" src="/vivekreel.mp4" controls playsInline muted autoPlay loop aria-label="Vivek Morvadia video reel" />
               </div>
             </div>
-            {/* Spotify */}
-            <div className="space-y-4">
-              <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center">
-                  <span className="text-white font-bold text-lg">♪</span>
-                </div>
-                <span className="text-2xl font-bold">Spotify</span>
+          </div>
+
+          {/* Spotify */}
+          <div className="w-full md:w-[48%] space-y-4">
+            <div className="flex items-center space-x-4">
+              <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center">
+                <span className="text-white font-bold text-lg">♪</span>
               </div>
-              <div className="rounded-xl overflow-hidden shadow-2xl">
-                {/* Responsive iframe height for mobile */}
+              <span className="text-2xl font-bold">Spotify</span>
+            </div>
+            <div className="rounded-xl overflow-hidden shadow-2xl">
+              <iframe
+                src="https://open.spotify.com/embed/track/68nhuep4SL6oopPcOkXcQS?utm_source=generator&theme=0"
+                className="w-full h-[220px] sm:h-[280px] md:h-[352px]"
+                frameBorder="0"
+                allowFullScreen
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"
+                title="Spotify Player"
+              ></iframe>
+            </div>
+          </div>
+
+          {/* YouTube */}
+          <div className="w-full md:w-[48%] space-y-4">
+            <div className="flex items-center space-x-4">
+              <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center">
+                <Play className="w-6 h-6 text-white" />
+              </div>
+              <span className="text-2xl font-bold">YouTube</span>
+            </div>
+            <div className="rounded-xl overflow-hidden shadow-2xl">
+              <div className="relative w-full aspect-video">
                 <iframe
-                  src="https://open.spotify.com/embed/track/68nhuep4SL6oopPcOkXcQS?utm_source=generator&theme=0"
-                  className="w-full h-[220px] sm:h-[280px] md:h-[352px]"
-                  frameBorder="0"
+                  className="absolute inset-0 w-full h-full"
+                  src="https://www.youtube.com/embed/SY5ceTJPrn4?si=pOFPPrSjjnujMiFf&rel=0&modestbranding=1&playsinline=1"
+                  title="YouTube video player"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowFullScreen
-                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                  loading="lazy"
-                  title="Spotify Player"
                 ></iframe>
               </div>
             </div>
-
-            {/* YouTube */}
-            <div className="space-y-4">
-              <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center">
-                  <Play className="w-6 h-6 text-white" />
-                </div>
-                <span className="text-2xl font-bold">YouTube</span>
-              </div>
-              {/* Aspect-video wrapper for responsive video */}
-              <div className="rounded-xl overflow-hidden shadow-2xl">
-                <div className="relative w-full aspect-video">
-                  <iframe
-                    className="absolute inset-0 w-full h-full"
-                    src="https://www.youtube.com/embed/SY5ceTJPrn4?si=pOFPPrSjjnujMiFf&rel=0&modestbranding=1&playsinline=1"
-                    title="YouTube video player"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen
-                  ></iframe>
-                </div>
-              </div>
-            </div>
-
-            {/* MP4 Reel */}
           </div>
         </div>
-        {/* Hide decorative rotated labels on small screens */}
+
+        {/* Decorative labels */}
         <div className="absolute left-8 top-1/2 -translate-y-1/2 -rotate-90 text-xs tracking-widest text-white/40 hidden md:block">MUSIC</div>
         <div className="absolute right-8 top-1/2 -translate-y-1/2 rotate-90 text-xs tracking-widest text-white/40 hidden md:block">VIDEO</div>
       </section>
