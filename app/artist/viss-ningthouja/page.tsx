@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function VissNingthoujaEPK() {
   // Social URLs
-  const instagramUrl = "https://www.instagram.com/viss_ningthouja";
+  const instagramUrl = "https://www.instagram.com/viss_ningthouja_/?igsh=c3pia2xlNzB4MWV0#";
   const youtubeUrl = "https://www.youtube.com/@VissNingthouja";
   const spotifyUrl = "https://open.spotify.com/artist/6PUtQBfuW9sbsM38uJlVDF";
 
@@ -16,7 +16,7 @@ export default function VissNingthoujaEPK() {
           <span className="text-sm font-medium">Back</span>
         </Link>
       </div>
-
+      52M+ Views • 20M+ Total Views
       {/* Hero Section */}
       <section className="relative h-screen">
         <div className="absolute inset-0">
@@ -52,7 +52,6 @@ export default function VissNingthoujaEPK() {
           <div className="mt-8 text-white/60 text-xs sm:text-sm tracking-widest">52M+ VIEWS • INTERNATIONAL COLLABS • CULTURAL FUSION</div>
         </div>
       </section>
-
       {/* Biography Section */}
       <section className="bg-gray-800 relative min-h-screen lg:bg-black p-8 overflow-hidden">
         {/* Background Image with Overlay */}
@@ -100,7 +99,7 @@ export default function VissNingthoujaEPK() {
                 </div>
                 <div className="backdrop-blur-sm bg-white/5 p-3 rounded-lg">
                   <p className="font-medium text-white/50">ACHIEVEMENTS</p>
-                  <p>52M+ Views • 20M+ Total Views</p>
+                  <p>52M+ Youtube Views • 20M+ Spotify Streams</p>
                 </div>
               </div>
             </div>
@@ -109,7 +108,6 @@ export default function VissNingthoujaEPK() {
 
         <div className="absolute right-8 top-1/2 transform -translate-y-1/2 rotate-90 text-xs tracking-widest text-white/40 z-10 hidden lg:block">VISS NINGTHOUJA</div>
       </section>
-
       <div className="space-y-6 pt-8 mt-16 p-8 rounded lg:hidden block">
         <h3 className="text-xl font-semibold tracking-wider text-white/90">ARTIST DETAILS</h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-white/70">
@@ -127,14 +125,13 @@ export default function VissNingthoujaEPK() {
           </div>
           <div className="backdrop-blur-sm bg-white/5 p-3 rounded-lg">
             <p className="font-medium text-white/90">ACHIEVEMENTS</p>
-            <p>52M+ Views • 20M+ Total Views</p>
+            <p>52M+ Youtube Views • 20M+ Spotify Streams</p>
           </div>
         </div>
       </div>
       <div className="w-full max-w-xs mx-auto h-[500px] rounded-lg overflow-hidden relative shadow-2xl lg:hidden">
-        <Image src="/vis2.JPG" alt="Viss Ningthouja Portrait" fill className="object-cover object-center" sizes="(max-width: 640px) 100vw, 20rem" />
+        <Image src="/viss1.JPG" alt="Viss Ningthouja Portrait" fill className="object-cover object-center" sizes="(max-width: 640px) 100vw, 20rem" />
       </div>
-
       {/* Media Section */}
       <section className="min-h-screen bg-gradient-to-t from-black via-purple-900 to-indigo-800 p-8">
         <div className="max-w-7xl mx-auto flex flex-wrap gap-12 items-start">
@@ -200,7 +197,6 @@ export default function VissNingthoujaEPK() {
         <div className="absolute left-8 top-1/2 transform -translate-y-1/2 -rotate-90 text-xs tracking-widest text-white/40 hidden md:block">MUSIC</div>
         <div className="absolute right-8 top-1/2 transform -translate-y-1/2 rotate-90 text-xs tracking-widest text-white/40 hidden md:block">VIDEO</div>
       </section>
-
       {/* Footer */}
       <footer className="bg-gradient-to-r from-gray-700 via-gray-900 to-black border-t border-white/10">
         <div className="max-w-7xl mx-auto px-8 py-16">
@@ -270,7 +266,7 @@ export default function VissNingthoujaEPK() {
               <a href="/terms" className="hover:text-white transition-colors">
                 Terms of Service
               </a>
-              <a href="/press-kit" className="hover:text-white transition-colors">
+              <a href="/viss-ningthouja-presskit" className="hover:text-white transition-colors">
                 Press Kit
               </a>
             </div>

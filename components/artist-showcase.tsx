@@ -30,7 +30,7 @@ const artists = [
 
     Each release showcases Ningthouja’s talent for crafting bold, genre-defying music that’s both emotionally stirring and sonically innovative, earning over 20M total views.`,
     social: {
-      instagram: "https://www.instagram.com/viss_ningthouja_?igsh=MW41bm42MGRmcnJlNw==",
+      instagram: "https://www.instagram.com/viss_ningthouja_/?igsh=c3pia2xlNzB4MWV0#",
       youtube: "https://www.youtube.com/@vissningthouja",
     },
   },
