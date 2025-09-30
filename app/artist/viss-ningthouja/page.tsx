@@ -2,10 +2,11 @@ import { ChevronDown, ChevronUp, Instagram, Play, Mail, Phone, MapPin, Youtube, 
 import Image from "next/image";
 import Link from "next/link";
 
-export default function VivekMorvadiaEPK() {
+export default function VissNingthoujaEPK() {
   // Social URLs
-  const instagramUrl = "https://www.instagram.com/vivek_morvadia";
-  const youtubeUrl = "https://www.youtube.com/@BillionEntertainment";
+  const instagramUrl = "https://www.instagram.com/viss_ningthouja";
+  const youtubeUrl = "https://www.youtube.com/@VissNingthouja";
+  const spotifyUrl = "https://open.spotify.com/artist/6PUtQBfuW9sbsM38uJlVDF";
 
   return (
     <div className="min-h-screen bg-black text-white">
@@ -15,23 +16,15 @@ export default function VivekMorvadiaEPK() {
           <span className="text-sm font-medium">Back</span>
         </Link>
       </div>
+
       {/* Hero Section */}
       <section className="relative h-screen">
         <div className="absolute inset-0">
-          <Image src="/still2.png" alt="Vivek Morvadia" sizes="100vw" fill priority className="object-cover scale-100 md:scale-100 object-center" />
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-900/80 via-slate-800/80 to-slate-900/80"></div>
+          <Image src="/vis2.jpg" alt="Viss Ningthouja" sizes="100vw" fill priority className="scale-95 object-cover  md:scale-100 object-center" />
+          <div className="absolute inset-0 bg-black/10"></div>
           <div className="absolute inset-0 bg-black/25"></div>
         </div>
 
-        {/* Corner Arrows */}
-        {/* <div className="absolute top-8 left-8 z-10">
-          <ChevronDown className="w-6 h-6 text-white/60" />
-          <div className="w-px h-24 bg-white/20 mx-auto mt-2"></div>
-        </div> */}
-        {/* <div className="absolute top-8 right-8 z-10">
-          <ChevronDown className="w-6 h-6 text-white/60" />
-          <div className="w-px h-24 bg-white/20 mx-auto mt-2"></div>
-        </div> */}
         <div className="absolute bottom-8 left-8 z-10">
           <div className="w-px h-24 bg-white/20 mx-auto mb-2"></div>
           <ChevronUp className="w-6 h-6 text-white/60" />
@@ -41,52 +34,52 @@ export default function VivekMorvadiaEPK() {
           <ChevronUp className="w-6 h-6 text-white/60" />
         </div>
 
-        {/* Main Hero Content - REMOVED mr-10 */}
+        {/* Main Hero Content */}
         <div className="relative z-10 h-full flex flex-col justify-center items-center text-center">
           <div className="absolute top-8 right-8 flex items-center space-x-4">
-            <a href={instagramUrl} target="_blank" rel="noopener noreferrer" className="p-3 rounded-full hover:bg-white/20 transition-colors cursor-pointer ">
+            <a href={instagramUrl} target="_blank" rel="noopener noreferrer" className="p-3 rounded-full hover:bg-white/20 transition-colors cursor-pointer">
               <InstagramIcon className="w-4 h-4" />
             </a>
-            <a href={youtubeUrl} target="_blank" rel="noopener noreferrer" className="p-3 rounded-full hover:bg-white/20 transition-colors cursor-pointer ">
+            <a href={youtubeUrl} target="_blank" rel="noopener noreferrer" className="p-3 rounded-full hover:bg-white/20 transition-colors cursor-pointer">
               <Youtube className="w-4 h-4" />
             </a>
           </div>
 
-          <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold tracking-wider mb-4 text-white drop-shadow-2xl">VIVEK MORVADIA</h1>
+          <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold tracking-wider mb-4 text-white drop-shadow-2xl">VISS NINGTHOUJA</h1>
           <div className="flex items-center justify-center space-x-8 text-base sm:text-lg tracking-wider">
-            <span className="text-white/80 font-medium">ARTIST • PERFORMER • VOCALIST</span>
+            <span className="text-white/80 font-medium">ELECTRONIC • DUBSTEP • PRODUCER</span>
           </div>
-          <div className="mt-8 text-white/60 text-xs sm:text-sm tracking-widest">2000+ SHOWS • ORIGINAL MUSIC • COLLABORATIONS</div>
+          <div className="mt-8 text-white/60 text-xs sm:text-sm tracking-widest">52M+ VIEWS • INTERNATIONAL COLLABS • CULTURAL FUSION</div>
         </div>
       </section>
 
       {/* Biography Section */}
-      <section className=" bg-gray-800 relative min-h-screen lg:bg-black p-8 overflow-hidden">
+      <section className="bg-gray-800 relative min-h-screen lg:bg-black p-8 overflow-hidden">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <div className="relative w-full h-full">
-            <Image src="/u12.png" alt="Vivek Morvadia Portrait" fill priority className="hidden lg:block object-cover object-center md:object-left md:scale-90 md:-ml-[120px]" sizes="100vw" />
-            <div className="absolute inset-0 "></div>
-            <div className="absolute inset-0 "></div>
+            <Image src="/viss1.jpg" alt="Viss Ningthouja Portrait" fill priority className="hidden lg:block object-cover object-center" sizes="100vw" />
+            <div className="absolute inset-0"></div>
+            <div className="absolute inset-0"></div>
           </div>
         </div>
 
         {/* Content */}
-        <div className="relative z-10 max-w-7xl mx-auto flex justify-center md:justify-end">
-          <div className="w-full lg:w-auto lg:max-w-2xl space-y-8 md:space-y-14 mt-16 p-4 rounded bg-gray-800 mx-auto md:ml-auto md:mr-[50px]">
+        <div className="relative z-10 max-w-7xl mx-auto flex items-center justify-center lg:justify-end">
+          <div className="w-full lg:w-auto lg:max-w-2xl space-y-8 md:space-y-14 mt-16 p-4 rounded bg-gray-800 flex flex-col items-center text-center">
             <h2 className="text-3xl md:text-5xl font-bold tracking-wider text-white">BIOGRAPHY</h2>
             <div className="space-y-6">
               <p className="text-base sm:text-lg leading-relaxed text-white/90 max-w-lg backdrop-blur-sm bg-white/5 p-4 rounded-lg">
-                Born in the culturally vibrant village of Bodaka in Junagadh, Gujarat, Vivek Morvadia has come a long way from his humble beginnings to become a dynamic and soulful artist, whose voice
-                now echoes across stages, celebrations, and digital platforms. At just 30 years old, Vivek has already crafted a musical legacy with more than 2.000 shows under his belt.
+                Viss Ningthouja is an electronic and dubstep singer, composer and producer from Imphal, India, whose music fuses deep basslines, intricate rhythms, and ethereal textures with cultural
+                influences from his roots.
               </p>
               <p className="text-base sm:text-lg leading-relaxed text-white/90 max-w-lg backdrop-blur-sm bg-white/5 p-4 rounded-lg">
-                Beyond covers and live performances, Vivek has also ventured into the realm of original music. His portfolio includes two original Gujarati songs, both of which reflect his deep
-                cultural roots, showcasing his commitment to contributing to regional music while pushing artistic boundaries.
+                With a growing catalog, Ningthouja has earned recognition for tracks such as Saayon, Saayon 2.0, Saayon 3.0, Kuru, Sara, Lamlen and also his recent releases including Saayon 4.0, Aura,
+                which showcased his versatility in blending electronic and dubstep with traditional elements.
               </p>
               <p className="text-base sm:text-lg leading-relaxed text-white/90 max-w-lg backdrop-blur-sm bg-white/5 p-4 rounded-lg">
-                Vivek's vocal style is deeply influenced by legends like KK, Arijit Singh, A.R. Rahman, Pritam, and Mithoon. He has collaborated with notable artists such as Kushal Chokshi, bringing
-                diverse flavors to his performances and recordings.
+                Adding to his musical journey, his international collaboration with Anxmus and many more has further enriched Ningthouja's dynamic sound and expanded his creative horizons. Each
+                release showcases his talent for crafting bold, genre-defying music that's both emotionally stirring and sonically innovative.
               </p>
             </div>
 
@@ -95,57 +88,55 @@ export default function VivekMorvadiaEPK() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-white/70">
                 <div className="backdrop-blur-sm bg-white/5 p-3 rounded-lg">
                   <p className="font-medium text-white/90">LOCATION</p>
-                  <p>Bodaka, Gujarat, India</p>
+                  <p>Imphal, Manipur, India</p>
                 </div>
                 <div className="backdrop-blur-sm bg-white/5 p-3 rounded-lg">
                   <p className="font-medium text-white/90">GENRES</p>
-                  <p>Gujarati, Bollywood, Folk</p>
+                  <p>Electronic, Dubstep, Fusion</p>
                 </div>
                 <div className="backdrop-blur-sm bg-white/5 p-3 rounded-lg">
                   <p className="font-medium text-white/90">SERVICES</p>
-                  <p>Playback, Live Concerts, Weddings</p>
+                  <p>Music Production, Live Sets, Collaborations</p>
                 </div>
                 <div className="backdrop-blur-sm bg-white/5 p-3 rounded-lg">
-                  <p className="font-medium text-white/90">EXPERIENCE</p>
-                  <p>2000+ Shows</p>
+                  <p className="font-medium text-white/90">ACHIEVEMENTS</p>
+                  <p>52M+ Views • 20M+ Total Views</p>
                 </div>
               </div>
             </div>
-
-            {/* Social Media Links */}
-
-            {/* Optional: Small profile image for mobile or as accent */}
           </div>
         </div>
-        <div className="absolute right-8 top-1/2 transform -translate-y-1/2 rotate-90 text-xs tracking-widest text-white/40 z-10 hidden lg:block">VIVEK MORVADIA</div>
+
+        <div className="absolute right-8 top-1/2 transform -translate-y-1/2 rotate-90 text-xs tracking-widest text-white/40 z-10 hidden lg:block">VISS NINGTHOUJA</div>
       </section>
-      <div className="space-y-6 pt-8  mt-16 p-8 rounded lg:hidden block">
+
+      <div className="space-y-6 pt-8 mt-16 p-8 rounded lg:hidden block">
         <h3 className="text-xl font-semibold tracking-wider text-white/90">ARTIST DETAILS</h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-white/70">
           <div className="backdrop-blur-sm bg-white/5 p-3 rounded-lg">
             <p className="font-medium text-white/90">LOCATION</p>
-            <p>Bodaka, Gujarat, India</p>
+            <p>Imphal, Manipur, India</p>
           </div>
           <div className="backdrop-blur-sm bg-white/5 p-3 rounded-lg">
             <p className="font-medium text-white/90">GENRES</p>
-            <p>Gujarati, Bollywood, Folk</p>
+            <p>Electronic, Dubstep, Fusion</p>
           </div>
           <div className="backdrop-blur-sm bg-white/5 p-3 rounded-lg">
             <p className="font-medium text-white/90">SERVICES</p>
-            <p>Playback, Live Concerts, Weddings</p>
+            <p>Music Production, Live Sets, Collaborations</p>
           </div>
           <div className="backdrop-blur-sm bg-white/5 p-3 rounded-lg">
-            <p className="font-medium text-white/90">EXPERIENCE</p>
-            <p>2000+ Shows</p>
+            <p className="font-medium text-white/90">ACHIEVEMENTS</p>
+            <p>52M+ Views • 20M+ Total Views</p>
           </div>
         </div>
       </div>
       <div className="w-full max-w-xs mx-auto h-[500px] rounded-lg overflow-hidden relative shadow-2xl lg:hidden">
-        <Image src="/1.png" alt="Vivek Morvadia Portrait" fill className="object-cover object-left md:scale-90 " sizes="(max-width: 640px) 100vw, 20rem" />
+        <Image src="/vis2.jpg" alt="Viss Ningthouja Portrait" fill className="object-cover object-center" sizes="(max-width: 640px) 100vw, 20rem" />
       </div>
 
       {/* Media Section */}
-      <section className="min-h-screen bg-gradient-to-t from-black via-slate-900 to-slate-800 p-8">
+      <section className="min-h-screen bg-gradient-to-t from-black via-purple-900 to-indigo-800 p-8">
         <div className="max-w-7xl mx-auto flex flex-wrap gap-12 items-start">
           {/* Showreel */}
           <div className="w-full md:w-[48%] space-y-4">
@@ -157,7 +148,7 @@ export default function VivekMorvadiaEPK() {
             </div>
             <div className="rounded-xl overflow-hidden shadow-2xl">
               <div className="relative w-full aspect-video">
-                <video className="absolute inset-0 w-full h-full object-cover" src="/vivekreel.mp4" controls playsInline muted autoPlay loop aria-label="Vivek Morvadia video reel" />
+                <video className="absolute inset-0 w-full h-full object-cover" src="/visshowreel.mp4.mp4" controls playsInline muted autoPlay loop aria-label="Viss Ningthouja video reel" />
               </div>
             </div>
           </div>
@@ -172,7 +163,7 @@ export default function VivekMorvadiaEPK() {
             </div>
             <div className="rounded-xl overflow-hidden shadow-2xl">
               <iframe
-                src="https://open.spotify.com/embed/track/68nhuep4SL6oopPcOkXcQS?utm_source=generator&theme=0"
+                src="https://open.spotify.com/embed/artist/6PUtQBfuW9sbsM38uJlVDF?utm_source=generator&theme=0"
                 className="w-full h-[220px] sm:h-[280px] md:h-[352px]"
                 frameBorder="0"
                 allowFullScreen
@@ -195,7 +186,7 @@ export default function VivekMorvadiaEPK() {
               <div className="relative w-full aspect-video">
                 <iframe
                   className="absolute inset-0 w-full h-full"
-                  src="https://www.youtube.com/embed/SY5ceTJPrn4?si=pOFPPrSjjnujMiFf&rel=0&modestbranding=1&playsinline=1"
+                  src="https://www.youtube.com/embed/g3cwkk8Q6Gc?si=WzQf9l5jQ8wKXZ7K&rel=0&modestbranding=1&playsinline=1"
                   title="YouTube video player"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowFullScreen
@@ -211,21 +202,21 @@ export default function VivekMorvadiaEPK() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gradient-to-t from-black via-slate-900 to-slate-800 border-t border-white/10">
+      <footer className="bg-gradient-to-r from-gray-700 via-gray-900 to-black border-t border-white/10">
         <div className="max-w-7xl mx-auto px-8 py-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
             <div className="lg:col-span-2 space-y-6">
               <div className="flex items-center space-x-4">
-                <div className="w-16 h-16 bg-gradient-to-br from-purple-600 to-pink-600 rounded-full flex items-center justify-center">
-                  <span className="text-white font-bold text-lg">VM</span>
+                <div className="w-16 h-16 bg-linear-to-r from-cyan-400 via-blue-400 to-indigo-400 rounded-full flex items-center justify-center">
+                  <span className="text-white font-bold text-lg">VN</span>
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold tracking-wider">VIVEK MORVADIA</h3>
-                  <p className="text-white/60">Artist • Vocalist • Performer</p>
+                  <h3 className="text-2xl font-bold tracking-wider">VISS NINGTHOUJA</h3>
+                  <p className="text-white/60">Electronic • Dubstep • Producer</p>
                 </div>
               </div>
               <p className="text-white/80 max-w-md leading-relaxed">
-                From the cultural heart of Gujarat to stages across India, bringing soulful music and unforgettable performances to every audience.
+                Fusing deep basslines, intricate rhythms, and ethereal textures with cultural influences from Manipur, creating genre-defying electronic music that resonates globally.
               </p>
               <div className="flex space-x-4">
                 <a href={instagramUrl} target="_blank" rel="noopener noreferrer" className="p-3 rounded-full hover:bg-white/20 transition-colors cursor-pointer">
@@ -234,19 +225,18 @@ export default function VivekMorvadiaEPK() {
                 <a href={youtubeUrl} target="_blank" rel="noopener noreferrer" className="p-3 rounded-full hover:bg-white/20 transition-colors cursor-pointer">
                   <Youtube className="w-5 h-5" />
                 </a>
-                {/* Add more if you have other socials */}
               </div>
             </div>
 
             <div className="space-y-6">
               <h4 className="text-lg font-semibold tracking-wider">SERVICES</h4>
               <ul className="space-y-3 text-white/70">
-                <li className="hover:text-white transition-colors cursor-pointer">Live Concerts</li>
-                <li className="hover:text-white transition-colors cursor-pointer">Wedding Performances</li>
-                <li className="hover:text-white transition-colors cursor-pointer">Corporate Events</li>
-                <li className="hover:text-white transition-colors cursor-pointer">Playback Singing</li>
-                <li className="hover:text-white transition-colors cursor-pointer">Studio Recording</li>
-                <li className="hover:text-white transition-colors cursor-pointer">Music Collaborations</li>
+                <li className="hover:text-white transition-colors cursor-pointer">Music Production</li>
+                <li className="hover:text-white transition-colors cursor-pointer">Live Electronic Sets</li>
+                <li className="hover:text-white transition-colors cursor-pointer">Sound Design</li>
+                <li className="hover:text-white transition-colors cursor-pointer">Collaborations</li>
+                <li className="hover:text-white transition-colors cursor-pointer">Mixing & Mastering</li>
+                <li className="hover:text-white transition-colors cursor-pointer">Original Compositions</li>
               </ul>
             </div>
 
@@ -255,7 +245,7 @@ export default function VivekMorvadiaEPK() {
               <div className="space-y-4 text-white/70">
                 <div className="flex items-center space-x-3">
                   <MapPin className="w-4 h-4 text-white/50" />
-                  <span className="text-sm">Bodaka, Junagadh, Gujarat</span>
+                  <span className="text-sm">Imphal, Manipur, India</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Mail className="w-4 h-4 text-white/50" />
@@ -272,7 +262,7 @@ export default function VivekMorvadiaEPK() {
 
         <div className="border-t border-white/10 px-8 py-6">
           <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="text-white/60 text-sm">© 2025 Vivek Morvadia. All rights reserved.</div>
+            <div className="text-white/60 text-sm">© 2025 Viss Ningthouja. All rights reserved.</div>
             <div className="flex space-x-6 text-white/60 text-sm">
               <a href="/privacy" className="hover:text-white transition-colors">
                 Privacy Policy
