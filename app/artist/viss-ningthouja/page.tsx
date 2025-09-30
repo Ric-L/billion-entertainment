@@ -16,7 +16,7 @@ export default function VissNingthoujaEPK() {
           <span className="text-sm font-medium">Back</span>
         </Link>
       </div>
-      52M+ Views • 20M+ Total Views
+
       {/* Hero Section */}
       <section className="relative h-screen">
         <div className="absolute inset-0">

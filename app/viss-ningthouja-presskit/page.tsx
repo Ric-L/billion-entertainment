@@ -33,8 +33,8 @@ export default function VissPressKit() {
               horizons.
             </p>
             <p className="transition-all duration-300 hover:text-white/90">
-              Each release showcases Ningthouja's talent for crafting bold, genre-defying music that's both emotionally stirring and sonically innovative, earning over <strong>20M total views</strong>
-              .
+              Each release showcases Ningthouja's talent for crafting bold, genre-defying music that's both emotionally stirring and sonically innovative, earning over{" "}
+              <strong>20M+ Spotify Streams</strong>.
             </p>
           </div>
         </section>
@@ -79,7 +79,10 @@ export default function VissPressKit() {
             <div className="bg-gray-900/50 rounded-2xl p-6 border border-gray-800 transition-all duration-300 hover:border-blue-500">
               <h3 className="text-xl font-bold text-blue-400 mb-3">Total Reach</h3>
               <p className="text-white/80">
-                Over <strong>20M total views</strong> across all releases
+                Over <strong>20M+ Spotify Streams</strong> across all releases
+              </p>
+              <p className="text-white/80">
+                <strong>52M+ Youtube Views</strong>
               </p>
             </div>
             <div className="bg-gray-900/50 rounded-2xl p-6 border border-gray-800 transition-all duration-300 hover:border-green-500">
