@@ -130,8 +130,8 @@ export default function VissNingthoujaEPK() {
           </div>
         </div>
       </div>
-      <div className="w-full max-w-xs mx-auto h-[500px] rounded-lg overflow-hidden relative shadow-2xl lg:hidden">
-        <Image src="/viss1.JPG" alt="Viss Ningthouja Portrait" fill className="object-cover object-center" sizes="(max-width: 640px) 100vw, 20rem" />
+      <div className="w-full max-w-xs mx-auto h-[500px] rounded-lg overflow-hidden relative shadow-2xl lg:hidden mb-10">
+        <Image src="/vis3.PNG" alt="Viss Ningthouja Portrait" fill className="object-cover object-center" sizes="(max-width: 640px) 100vw, 20rem" />
       </div>
       {/* Media Section */}
       <section className="min-h-screen bg-gradient-to-t from-black via-purple-900 to-indigo-800 p-8">
