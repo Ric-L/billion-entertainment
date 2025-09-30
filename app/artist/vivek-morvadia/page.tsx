@@ -81,8 +81,9 @@ export default function VivekMorvadiaEPK() {
                 now echoes across stages, celebrations, and digital platforms. At just 30 years old, Vivek has already crafted a musical legacy with more than 2.000 shows under his belt.
               </p>
               <p className="text-base sm:text-lg leading-relaxed text-white/90 max-w-lg backdrop-blur-sm bg-white/5 p-4 rounded-lg">
-                Beyond covers and live performances, Vivek has also ventured into the realm of original music. His portfolio includes two original Gujarati songs, both of which reflect his deep
-                cultural roots, showcasing his commitment to contributing to regional music while pushing artistic boundaries.
+                Beyond covers and live performances, Vivek has also ventured into the realm of original music. In August 2025, he released his debut single Sirf Tu, which garnered notable success and
+                marked his entry into the independent music scene. Building on this momentum, Vivek is set to release another heartfelt single, Bikhre Armaan on October 10th, which will be followed by
+                an eagerly awaited EP featuring six tracks in November 2025.
               </p>
               <p className="text-base sm:text-lg leading-relaxed text-white/90 max-w-lg backdrop-blur-sm bg-white/5 p-4 rounded-lg">
                 Vivek's vocal style is deeply influenced by legends like KK, Arijit Singh, A.R. Rahman, Pritam, and Mithoon. He has collaborated with notable artists such as Kushal Chokshi, bringing

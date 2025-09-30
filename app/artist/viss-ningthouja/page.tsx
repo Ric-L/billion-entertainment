@@ -74,9 +74,8 @@ export default function VissNingthoujaEPK() {
                 influences from his roots.
               </p>
               <p className="text-base sm:text-lg leading-relaxed text-white/90 lg:text-slate-700/90  max-w-lg backdrop-blur-sm bg-white/5 p-4 rounded-lg">
-                Beyond covers and live performances, Vivek has also ventured into the realm of original music. In August 2025, he released his debut single Sirf Tu, which garnered notable success and
-                marked his entry into the independent music scene. Building on this momentum, Vivek is set to release another heartfelt single, Bikhre Armaan on October 10th, which will be followed by
-                an eagerly awaited EP featuring six tracks in November 2025.
+                With a growing catalog, Ningthouja has earned recognition for tracks such as Saayon, Saayon 2.0, Saayon 3.0, Kuru, Sara, Lamlen and also his recent releases including Saayon 4.0, Aura,
+                which showcased his versatility in blending electronic and dubstep with traditional elements.
               </p>
               <p className="text-base sm:text-lg leading-relaxed text-white/90 lg:text-slate-700/90  max-w-lg backdrop-blur-sm bg-white/5 p-4 rounded-lg">
                 Adding to his musical journey, his international collaboration with Anxmus and many more has further enriched Ningthouja's dynamic sound and expanded his creative horizons. Each
