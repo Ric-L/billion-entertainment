@@ -7,7 +7,7 @@ const events = [
   {
     id: 1,
     title: "Summer Music Festival",
-    date: "July 15, 2024",
+    date: "July 15, 2025",
     time: "7:00 PM",
     venue: "Delhi India",
     artist: "VIVEK MORVADIA",
@@ -16,7 +16,7 @@ const events = [
   {
     id: 2,
     title: "Rock Night Live",
-    date: "August 3, 2024",
+    date: "August 3, 2025",
     time: "9:00 PM",
     venue: "Delhi India",
     artist: "VIVEK MORVADIA",
@@ -25,7 +25,7 @@ const events = [
   {
     id: 3,
     title: "Acoustic Sessions",
-    date: "August 20, 2024",
+    date: "August 20, 2025",
     time: "8:00 PM",
     venue: "Delhi India",
     artist: "VIVEK MORVADIA",
@@ -34,7 +34,7 @@ const events = [
   {
     id: 4,
     title: "Electronic Rock Tour",
-    date: "September 5, 2024",
+    date: "September 5, 2025",
     time: "10:00 PM",
     venue: "Delhi India",
     artist: "VIVEK MORVADIA",

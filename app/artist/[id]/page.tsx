@@ -18,7 +18,9 @@ export default function VivekMorvadiaEPK() {
       {/* Hero Section */}
       <section className="relative h-screen">
         <div className="absolute inset-0">
-          <Image src="/still2.png" alt="Vivek Morvadia" fill priority className=" scale-95 object-cover lg:scale-100 md:object-cover object-center md:object-left md:ml-[100px]" sizes="100vw" />
+          {/* <Image src="/still2.png" alt="Vivek Morvadia" sizes="100vw" fill priority className="object-cover scale-75 md:scale-100 object-center" /> */}
+          <Image src="/still2.png" alt="Vivek Morvadia" sizes="100vw" fill priority className="object-cover scale-100 md:scale-100 object-center" />
+
           <div className="absolute inset-0 bg-gradient-to-br from-slate-900/80 via-slate-800/80 to-slate-900/80"></div>
           <div className="absolute inset-0 bg-black/25"></div>
         </div>
@@ -78,7 +80,7 @@ export default function VivekMorvadiaEPK() {
             <div className="space-y-6">
               <p className="text-base sm:text-lg leading-relaxed text-white/90 max-w-lg backdrop-blur-sm bg-white/5 p-4 rounded-lg">
                 Born in the culturally vibrant village of Bodaka in Junagadh, Gujarat, Vivek Morvadia has come a long way from his humble beginnings to become a dynamic and soulful artist, whose voice
-                now echoes across stages, celebrations, and digital platforms. At just 30 years old, Vivek has already crafted a musical legacy with more than 1,000 shows under his belt.
+                now echoes across stages, celebrations, and digital platforms. At just 30 years old, Vivek has already crafted a musical legacy with more than 2.000 shows under his belt.
               </p>
               <p className="text-base sm:text-lg leading-relaxed text-white/90 max-w-lg backdrop-blur-sm bg-white/5 p-4 rounded-lg">
                 Beyond covers and live performances, Vivek has also ventured into the realm of original music. His portfolio includes two original Gujarati songs, both of which reflect his deep
@@ -272,7 +274,7 @@ export default function VivekMorvadiaEPK() {
 
         <div className="border-t border-white/10 px-8 py-6">
           <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="text-white/60 text-sm">© 2024 Vivek Morvadia. All rights reserved.</div>
+            <div className="text-white/60 text-sm">© 2025 Vivek Morvadia. All rights reserved.</div>
             <div className="flex space-x-6 text-white/60 text-sm">
               <a href="/privacy" className="hover:text-white transition-colors">
                 Privacy Policy

@@ -129,7 +129,7 @@ export default function Footer() {
               isVisible ? "animate-slide-in-left opacity-100" : "opacity-0 translate-x-10"
             }`}
           >
-            <p className="text-muted-foreground text-sm">© 2024 Billion Entertainment. All rights reserved.</p>
+            <p className="text-muted-foreground text-sm">© 2025 Billion Entertainment. All rights reserved.</p>
             <div className="flex gap-6 text-sm">
               <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
                 Privacy Policy

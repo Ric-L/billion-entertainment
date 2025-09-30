@@ -80,7 +80,7 @@ export default function VivekMorvadiaEPK() {
             <div className="space-y-6">
               <p className="text-lg leading-relaxed text-white/90 max-w-lg backdrop-blur-sm bg-white/5 p-4 rounded-lg">
                 Born in the culturally vibrant village of Bodaka in Junagadh, Gujarat, Vivek Morvadia has come a long way from his humble beginnings to become a dynamic and soulful artist, whose voice
-                now echoes across stages, celebrations, and digital platforms. At just 30 years old, Vivek has already crafted a musical legacy with more than 1,000 shows under his belt.
+                now echoes across stages, celebrations, and digital platforms. At just 30 years old, Vivek has already crafted a musical legacy with more than 2.000 shows under his belt.
               </p>
               <p className="text-lg leading-relaxed text-white/90 max-w-lg backdrop-blur-sm bg-white/5 p-4 rounded-lg">
                 Beyond covers and live performances, Vivek has also ventured into the realm of original music. His portfolio includes two original Gujarati songs, both of which reflect his deep
@@ -259,7 +259,7 @@ export default function VivekMorvadiaEPK() {
 
         <div className="border-t border-white/10 px-8 py-6">
           <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="text-white/60 text-sm">© 2024 Vivek Morvadia. All rights reserved.</div>
+            <div className="text-white/60 text-sm">© 2025 Vivek Morvadia. All rights reserved.</div>
             <div className="flex space-x-6 text-white/60 text-sm">
               <a href="/privacy" className="hover:text-white transition-colors">
                 Privacy Policy
@@ -360,7 +360,7 @@ export default function VivekMorvadiaEPK() {
 //             <div className="space-y-6">
 //               <p className="text-lg leading-relaxed text-white/90 max-w-lg backdrop-blur-sm bg-white/5 p-4 rounded-lg">
 //                 Born in the culturally vibrant village of Bodaka in Junagadh, Gujarat, Vivek Morvadia has come a long way from his humble beginnings to become a dynamic and soulful artist, whose voice
-//                 now echoes across stages, celebrations, and digital platforms. At just 30 years old, Vivek has already crafted a musical legacy with more than 1,000 shows under his belt.
+//                 now echoes across stages, celebrations, and digital platforms. At just 30 years old, Vivek has already crafted a musical legacy with more than 2.000 shows under his belt.
 //               </p>
 //               <p className="text-lg leading-relaxed text-white/90 max-w-lg backdrop-blur-sm bg-white/5 p-4 rounded-lg">
 //                 Beyond covers and live performances, Vivek has also ventured into the realm of original music. His portfolio includes two original Gujarati songs, both of which reflect his deep
@@ -517,7 +517,7 @@ export default function VivekMorvadiaEPK() {
 
 //         <div className="border-t border-white/10 px-8 py-6">
 //           <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-//             <div className="text-white/60 text-sm">© 2024 Vivek Morvadia. All rights reserved.</div>
+//             <div className="text-white/60 text-sm">© 2025 Vivek Morvadia. All rights reserved.</div>
 //             <div className="flex space-x-6 text-white/60 text-sm">
 //               <a href="/privacy" className="hover:text-white transition-colors">
 //                 Privacy Policy
