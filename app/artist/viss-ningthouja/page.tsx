@@ -74,10 +74,9 @@ export default function VissNingthoujaEPK() {
                 influences from his roots.
               </p>
               <p className="text-base sm:text-lg leading-relaxed text-white/90 lg:text-slate-700/90  max-w-lg backdrop-blur-sm bg-white/5 p-4 rounded-lg">
-                Beyond covers and live performances, Vivek has also ventured into the realm of original music. His portfolio includes two original Gujarati songs, both of which reflect his deep
-                cultural roots, showcasing his commitment to contributing to regional music while pushing artistic boundaries. In August 2025, he released his debut single Sirf Tu, which garnered
-                notable success and marked his entry into the independent music scene. Building on this momentum, Vivek is set to release another heartfelt single, Bikhre Armaan on October 10th, which
-                will be followed by an eagerly awaited EP featuring six tracks in November 2025.
+                Beyond covers and live performances, Vivek has also ventured into the realm of original music. In August 2025, he released his debut single Sirf Tu, which garnered notable success and
+                marked his entry into the independent music scene. Building on this momentum, Vivek is set to release another heartfelt single, Bikhre Armaan on October 10th, which will be followed by
+                an eagerly awaited EP featuring six tracks in November 2025.
               </p>
               <p className="text-base sm:text-lg leading-relaxed text-white/90 lg:text-slate-700/90  max-w-lg backdrop-blur-sm bg-white/5 p-4 rounded-lg">
                 Adding to his musical journey, his international collaboration with Anxmus and many more has further enriched Ningthouja's dynamic sound and expanded his creative horizons. Each
