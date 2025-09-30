@@ -47,7 +47,8 @@ export default function VissNingthoujaEPK() {
 
           <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold tracking-wider mb-4 text-white drop-shadow-2xl">VISS NINGTHOUJA</h1>
           <div className="flex items-center justify-center space-x-8 text-base sm:text-lg tracking-wider">
-            <span className="text-white/80 font-medium">ELECTRONIC • DUBSTEP • PRODUCER</span>
+            {/* <span className="text-white/80 font-medium">ELECTRONIC • DUBSTEP • PRODUCER</span> */}
+            <span className="text-white/80 font-medium uppercase">House Music • Afro • Dubstep • Progressive House</span>
           </div>
           <div className="mt-8 text-white/60 text-xs sm:text-sm tracking-widest">52M+ VIEWS • INTERNATIONAL COLLABS • CULTURAL FUSION</div>
         </div>
