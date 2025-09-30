@@ -9,7 +9,7 @@ export default function VivekMorvadiaEPK() {
 
   return (
     <div className="min-h-screen bg-black text-white">
-      <div className="absolute top-6 left-6 z-50">
+      <div className="absolute top-10 left-6 z-50">
         <Link href="/" className="ml-4 flex items-center space-x-2 px-4 py-2 rounded-full bg-white/5 hover:bg-white/20 transition-colors">
           <ChevronLeft className="w-5 h-5" />
           <span className="text-sm font-medium">Back</span>
@@ -18,7 +18,8 @@ export default function VivekMorvadiaEPK() {
       {/* Hero Section */}
       <section className="relative h-screen">
         <div className="absolute inset-0">
-          <Image src="/still2.png" alt="Vivek Morvadia" sizes="100vw" fill priority className="object-cover scale-100 md:scale-100 object-center" />
+          <Image src="/still2.png" alt="Vivek Morvadia" sizes="100vw" fill priority className=" hidden lg:block object-cover scale-100 md:scale-100 object-center" />
+          <Image src="/Portrait.png" alt="Vivek Morvadia" sizes="100vw" fill priority className=" block lg:hidden object-cover scale-100 md:scale-100 object-center" />
           <div className="absolute inset-0 bg-gradient-to-br from-slate-900/80 via-slate-800/80 to-slate-900/80"></div>
           <div className="absolute inset-0 bg-black/25"></div>
         </div>
@@ -45,10 +46,10 @@ export default function VivekMorvadiaEPK() {
         <div className="relative z-10 h-full flex flex-col justify-center items-center text-center">
           <div className="absolute top-8 right-8 flex items-center space-x-4">
             <a href={instagramUrl} target="_blank" rel="noopener noreferrer" className="p-3 rounded-full hover:bg-white/20 transition-colors cursor-pointer ">
-              <InstagramIcon className="w-4 h-4" />
+              <InstagramIcon className="w-6 h-6" />
             </a>
             <a href={youtubeUrl} target="_blank" rel="noopener noreferrer" className="p-3 rounded-full hover:bg-white/20 transition-colors cursor-pointer ">
-              <Youtube className="w-4 h-4" />
+              <Youtube className="w-6 h-6" />
             </a>
           </div>
 
@@ -100,7 +101,7 @@ export default function VivekMorvadiaEPK() {
                 </div>
                 <div className="backdrop-blur-sm bg-white/5 p-3 rounded-lg">
                   <p className="font-medium text-white/90">GENRES</p>
-                  <p>Gujarati, Bollywood, Folk</p>
+                  <p className="uppercase">Pop, Soft Rock, Folk</p>
                 </div>
                 <div className="backdrop-blur-sm bg-white/5 p-3 rounded-lg">
                   <p className="font-medium text-white/90">SERVICES</p>
@@ -129,7 +130,7 @@ export default function VivekMorvadiaEPK() {
           </div>
           <div className="backdrop-blur-sm bg-white/5 p-3 rounded-lg">
             <p className="font-medium text-white/90">GENRES</p>
-            <p>Gujarati, Bollywood, Folk</p>
+            <p className="uppercase">Pop, Soft Rock, Folk</p>
           </div>
           <div className="backdrop-blur-sm bg-white/5 p-3 rounded-lg">
             <p className="font-medium text-white/90">SERVICES</p>

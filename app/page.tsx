@@ -16,13 +16,12 @@ export default function HomePage() {
 
       {/* Artist showcase */}
       <ArtistShowcase />
-
-      <BookingSection />
-
-      <EventsList />
-
-      {/* Animated footer */}
-      <Footer />
+      <div className="bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#334155]">
+        <BookingSection />
+        <EventsList />
+        {/* Animated footer */}
+        <Footer />
+      </div>
     </main>
   );
 }
