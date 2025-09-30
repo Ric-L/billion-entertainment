@@ -67,17 +67,17 @@ export default function VissNingthoujaEPK() {
         {/* Content */}
         <div className="relative z-10 max-w-7xl mx-auto flex items-center justify-center lg:justify-end">
           <div className="w-full lg:w-auto lg:max-w-2xl space-y-8 md:space-y-14 mt-16 p-4 rounded bg-transparent backdrop-blur-3xl flex flex-col items-center text-center">
-            <h2 className="text-3xl md:text-5xl font-bold tracking-wider text-slate-600">BIOGRAPHY</h2>
+            <h2 className="text-3xl md:text-5xl font-bold tracking-wider text-white/60 lg:text-slate-600">BIOGRAPHY</h2>
             <div className="space-y-6">
-              <p className="text-base sm:text-lg leading-relaxed text-slate-700/90 max-w-lg backdrop-blur-sm bg-white/5 p-4 rounded-lg">
+              <p className="text-base sm:text-lg leading-relaxed text-white/90 lg:text-slate-700/90  max-w-lg backdrop-blur-sm bg-white/5 p-4 rounded-lg">
                 Viss Ningthouja is an electronic and dubstep singer, composer and producer from Imphal, India, whose music fuses deep basslines, intricate rhythms, and ethereal textures with cultural
                 influences from his roots.
               </p>
-              <p className="text-base sm:text-lg leading-relaxed text-slate-700/90 max-w-lg backdrop-blur-sm bg-white/5 p-4 rounded-lg">
+              <p className="text-base sm:text-lg leading-relaxed text-white/90 lg:text-slate-700/90  max-w-lg backdrop-blur-sm bg-white/5 p-4 rounded-lg">
                 With a growing catalog, Ningthouja has earned recognition for tracks such as Saayon, Saayon 2.0, Saayon 3.0, Kuru, Sara, Lamlen and also his recent releases including Saayon 4.0, Aura,
                 which showcased his versatility in blending electronic and dubstep with traditional elements.
               </p>
-              <p className="text-base sm:text-lg leading-relaxed text-slate-700/90 max-w-lg backdrop-blur-sm bg-white/5 p-4 rounded-lg">
+              <p className="text-base sm:text-lg leading-relaxed text-white/90 lg:text-slate-700/90  max-w-lg backdrop-blur-sm bg-white/5 p-4 rounded-lg">
                 Adding to his musical journey, his international collaboration with Anxmus and many more has further enriched Ningthouja's dynamic sound and expanded his creative horizons. Each
                 release showcases his talent for crafting bold, genre-defying music that's both emotionally stirring and sonically innovative.
               </p>
@@ -85,7 +85,7 @@ export default function VissNingthoujaEPK() {
 
             <div className="space-y-6 hidden lg:block pt-8 border-t border-white/20">
               <h3 className="text-xl font-semibold tracking-wider text-white/50">ARTIST DETAILS</h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-white/50/70">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-white/70">
                 <div className="backdrop-blur-sm bg-white/5 p-3 rounded-lg">
                   <p className="font-medium text-white/50">LOCATION</p>
                   <p>Imphal, Manipur, India</p>
