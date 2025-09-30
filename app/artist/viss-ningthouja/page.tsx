@@ -20,7 +20,7 @@ export default function VissNingthoujaEPK() {
       {/* Hero Section */}
       <section className="relative h-screen">
         <div className="absolute inset-0">
-          <Image src="/vis2.jpg" alt="Viss Ningthouja" sizes="100vw" fill priority className="scale-95 object-cover  md:scale-100 object-center" />
+          <Image src="/vis2.JPG" alt="Viss Ningthouja" sizes="100vw" fill priority className="scale-95 object-cover  md:scale-100 object-center" />
           <div className="absolute inset-0 bg-black/10"></div>
           <div className="absolute inset-0 bg-black/25"></div>
         </div>
@@ -58,7 +58,7 @@ export default function VissNingthoujaEPK() {
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <div className="relative w-full h-full">
-            <Image src="/viss1.jpg" alt="Viss Ningthouja Portrait" fill priority className="hidden lg:block object-cover object-center" sizes="100vw" />
+            <Image src="/viss1.JPG" alt="Viss Ningthouja Portrait" fill priority className="hidden lg:block object-cover object-center" sizes="100vw" />
             <div className="absolute inset-0"></div>
             <div className="absolute inset-0"></div>
           </div>
@@ -132,7 +132,7 @@ export default function VissNingthoujaEPK() {
         </div>
       </div>
       <div className="w-full max-w-xs mx-auto h-[500px] rounded-lg overflow-hidden relative shadow-2xl lg:hidden">
-        <Image src="/vis2.jpg" alt="Viss Ningthouja Portrait" fill className="object-cover object-center" sizes="(max-width: 640px) 100vw, 20rem" />
+        <Image src="/vis2.JPG" alt="Viss Ningthouja Portrait" fill className="object-cover object-center" sizes="(max-width: 640px) 100vw, 20rem" />
       </div>
 
       {/* Media Section */}
