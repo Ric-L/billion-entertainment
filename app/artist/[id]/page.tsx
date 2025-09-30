@@ -10,7 +10,7 @@ export default function VivekMorvadiaEPK() {
   return (
     <div className="min-h-screen bg-black text-white">
       <div className="absolute top-6 left-6 z-50">
-        <Link href="/" className="ml-14 flex items-center space-x-2 px-4 py-2 rounded-full bg-white/5 hover:bg-white/20 transition-colors">
+        <Link href="/" className="ml-4 flex items-center space-x-2 px-4 py-2 rounded-full bg-white/5 hover:bg-white/20 transition-colors">
           <ChevronLeft className="w-5 h-5" />
           <span className="text-sm font-medium">Back</span>
         </Link>
@@ -18,22 +18,20 @@ export default function VivekMorvadiaEPK() {
       {/* Hero Section */}
       <section className="relative h-screen">
         <div className="absolute inset-0">
-          {/* <Image src="/still2.png" alt="Vivek Morvadia" sizes="100vw" fill priority className="object-cover scale-75 md:scale-100 object-center" /> */}
           <Image src="/still2.png" alt="Vivek Morvadia" sizes="100vw" fill priority className="object-cover scale-100 md:scale-100 object-center" />
-
           <div className="absolute inset-0 bg-gradient-to-br from-slate-900/80 via-slate-800/80 to-slate-900/80"></div>
           <div className="absolute inset-0 bg-black/25"></div>
         </div>
 
         {/* Corner Arrows */}
-        <div className="absolute top-8 left-8 z-10">
+        {/* <div className="absolute top-8 left-8 z-10">
           <ChevronDown className="w-6 h-6 text-white/60" />
           <div className="w-px h-24 bg-white/20 mx-auto mt-2"></div>
-        </div>
-        <div className="absolute top-8 right-8 z-10">
+        </div> */}
+        {/* <div className="absolute top-8 right-8 z-10">
           <ChevronDown className="w-6 h-6 text-white/60" />
           <div className="w-px h-24 bg-white/20 mx-auto mt-2"></div>
-        </div>
+        </div> */}
         <div className="absolute bottom-8 left-8 z-10">
           <div className="w-px h-24 bg-white/20 mx-auto mb-2"></div>
           <ChevronUp className="w-6 h-6 text-white/60" />
@@ -43,8 +41,8 @@ export default function VivekMorvadiaEPK() {
           <ChevronUp className="w-6 h-6 text-white/60" />
         </div>
 
-        {/* Main Hero Content */}
-        <div className="relative mr-10 z-10 h-full flex flex-col justify-center items-center text-center">
+        {/* Main Hero Content - REMOVED mr-10 */}
+        <div className="relative z-10 h-full flex flex-col justify-center items-center text-center">
           <div className="absolute top-8 right-8 flex items-center space-x-4">
             <a href={instagramUrl} target="_blank" rel="noopener noreferrer" className="p-3 rounded-full hover:bg-white/20 transition-colors cursor-pointer ">
               <InstagramIcon className="w-4 h-4" />
