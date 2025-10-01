@@ -68,59 +68,65 @@ export default function ArtistShowcase() {
           <p className="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto">Meet the incredible talent we're proud to support on their journey to stardom</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {artists.map((artist, index) => (
-            <div key={artist.id} className={`transition-all duration-700 ${isVisible ? "animate-fade-in-up opacity-100" : "opacity-0 translate-y-10"}`} style={{ animationDelay: `${index * 150}ms` }}>
-              <Card
-                className="group overflow-hidden border-2 border-gray-800 hover:border-gray-600 transition-all duration-300 bg-gray-800 hover:shadow-xl hover:scale-105 h-full flex flex-col"
-                onMouseEnter={() => setHoveredArtist(artist.id)}
-                onMouseLeave={() => setHoveredArtist(null)}
+        <div className="flex justify-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 md:max-w-5xl max-w-3xl  mx-auto">
+            {artists.map((artist, index) => (
+              <div
+                key={artist.id}
+                className={`transition-all duration-700 ${isVisible ? "animate-fade-in-up opacity-100" : "opacity-0 translate-y-10"}`}
+                style={{ animationDelay: `${index * 150}ms` }}
               >
-                {/* Image */}
-                <div className="relative overflow-hidden h-80">
-                  <img src={artist.image} alt={artist.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <Card
+                  className="group overflow-hidden border-2 border-gray-800 hover:border-gray-600 transition-all duration-300 bg-gray-800 hover:shadow-xl hover:scale-105 h-full flex flex-col"
+                  onMouseEnter={() => setHoveredArtist(artist.id)}
+                  onMouseLeave={() => setHoveredArtist(null)}
+                >
+                  {/* Image */}
+                  <div className="relative overflow-hidden h-80">
+                    <img src={artist.image} alt={artist.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-                  {/* Social */}
-                  <div className={`absolute top-4 right-4 flex flex-col gap-2 transition-all duration-300 ${hoveredArtist === artist.id ? "opacity-100 translate-x-0" : "opacity-0 translate-x-4"}`}>
-                    {artist.social.instagram && (
-                      <Button size="icon" variant="secondary" className="h-8 w-8 bg-gray-900 hover:bg-gray-700" onClick={() => handleSocialClick(artist.social.instagram)}>
-                        <Instagram className="h-4 w-4" />
-                      </Button>
-                    )}
-                    {artist.social.youtube && (
-                      <Button size="icon" variant="secondary" className="h-8 w-8 bg-gray-900 hover:bg-gray-700" onClick={() => handleSocialClick(artist.social.youtube)}>
-                        <Youtube className="h-4 w-4" />
-                      </Button>
-                    )}
+                    {/* Social */}
+                    <div className={`absolute top-4 right-4 flex flex-col gap-2 transition-all duration-300 ${hoveredArtist === artist.id ? "opacity-100 translate-x-0" : "opacity-0 translate-x-4"}`}>
+                      {artist.social.instagram && (
+                        <Button size="icon" variant="secondary" className="h-8 w-8 bg-gray-900 hover:bg-gray-700" onClick={() => handleSocialClick(artist.social.instagram)}>
+                          <Instagram className="h-4 w-4" />
+                        </Button>
+                      )}
+                      {artist.social.youtube && (
+                        <Button size="icon" variant="secondary" className="h-8 w-8 bg-gray-900 hover:bg-gray-700" onClick={() => handleSocialClick(artist.social.youtube)}>
+                          <Youtube className="h-4 w-4" />
+                        </Button>
+                      )}
+                    </div>
                   </div>
-                </div>
 
-                {/* Content */}
-                <CardContent className="p-6 bg-gray-800 flex flex-col flex-grow">
-                  <h3 className="text-2xl font-bold mb-2 text-white group-hover:text-gray-300 transition-colors">{artist.name}</h3>
+                  {/* Content */}
+                  <CardContent className="p-6 bg-gray-800 flex flex-col flex-grow">
+                    <h3 className="text-2xl font-bold mb-2 text-white group-hover:text-gray-300 transition-colors">{artist.name}</h3>
 
-                  {/* Bio with see more */}
-                  <p className={`text-gray-400 mb-4 ${expanded === artist.id ? "" : "line-clamp-3"}`}>{artist.bio}</p>
-                  {artist.bio.length > 120 && (
-                    <button className="text-sm text-blue-400 hover:text-blue-300 mb-4 self-start" onClick={() => setExpanded(expanded === artist.id ? null : artist.id)}>
-                      {expanded === artist.id ? "See Less" : "See More"}
-                    </button>
-                  )}
+                    {/* Bio with see more */}
+                    <p className={`text-gray-400 mb-4 ${expanded === artist.id ? "" : "line-clamp-3"}`}>{artist.bio}</p>
+                    {artist.bio.length > 120 && (
+                      <button className="text-sm text-blue-400 hover:text-blue-300 mb-4 self-start" onClick={() => setExpanded(expanded === artist.id ? null : artist.id)}>
+                        {expanded === artist.id ? "See Less" : "See More"}
+                      </button>
+                    )}
 
-                  {/* Push button to bottom */}
-                  <div className="mt-auto">
-                    <Link href={`/artist/${artist.link}`}>
-                      <Button className="w-full bg-gray-900 text-white hover:bg-gray-700">
-                        View Profile
-                        <ExternalLink className="ml-2 h-4 w-4" />
-                      </Button>
-                    </Link>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          ))}
+                    {/* Push button to bottom */}
+                    <div className="mt-auto">
+                      <Link href={`/artist/${artist.link}`}>
+                        <Button className="w-full bg-gray-900 text-white hover:bg-gray-700">
+                          View Profile
+                          <ExternalLink className="ml-2 h-4 w-4" />
+                        </Button>
+                      </Link>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

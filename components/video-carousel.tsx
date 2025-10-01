@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, InstagramIcon, LucideFacebook, LucideTwitter, Youtube } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const videos = [
@@ -11,6 +11,13 @@ const videos = [
     title: "Featured Artist Performance",
     artist: "Vivek Morvadia",
     description: "Experience the energy of live performance",
+  },
+  {
+    // id: "dQw4w9WgXcQ", // Rick Astley - Never Gonna Give You Up (example)
+    id: "YoivBEFZ7vQ",
+    title: "Featured Artist Performance",
+    artist: "Viss Ningthouja",
+    // description: "Experience the energy of live performance",
   },
   // {
   //   id: "kJQP7kiw5Fk", // Luis Fonsi - Despacito (example)
@@ -46,6 +53,10 @@ export default function VideoCarousel() {
   const prevVideo = () => {
     setCurrentVideo((prev) => (prev - 1 + videos.length) % videos.length);
   };
+  const instagramUrl = "https://www.instagram.com/vivek_morvadia";
+  const youtubeUrl = "https://www.youtube.com/@BillionEntertainment";
+  const twitterURl = "https://x.com/billionent1";
+  const fbURl = "https://www.facebook.com/share/17SYDwkzQE/";
 
   return (
     <section className="relative h-screen w-full overflow-hidden">
@@ -55,7 +66,9 @@ export default function VideoCarousel() {
           <div key={video.id} className={`absolute inset-0 transition-opacity duration-1000 ${index === currentVideo ? "opacity-100" : "opacity-0"}`}>
             <div className="video-bg">
               <iframe
-                src={`https://www.youtube.com/embed/${video.id}?autoplay=1&mute=1&loop=1&playlist=${video.id}&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&playsinline=1`}
+                src={`https://www.youtube.com/embed/${video.id}?autoplay=1&mute=1&loop=1&playlist=${video.id}&
+controls=0&rel=0&
+iv_load_policy=3&modestbranding=1&playsinline=1&disablekb=1&fs=0`}
                 className="video-bg-iframe"
                 allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
                 allowFullScreen
@@ -69,7 +82,20 @@ export default function VideoCarousel() {
           </div>
         ))}
       </div>
-
+      <div className="absolute top-8 right-8 z-30 flex items-center space-x-4">
+        <a href={instagramUrl} target="_blank" rel="noopener noreferrer" className="p-3 rounded-full hover:bg-white/20 transition-colors cursor-pointer">
+          <InstagramIcon className="w-6 h-6 text-white" />
+        </a>
+        <a href={youtubeUrl} target="_blank" rel="noopener noreferrer" className="p-3 rounded-full hover:bg-white/20 transition-colors cursor-pointer">
+          <Youtube className="w-6 h-6 text-white" />
+        </a>
+        <a href={twitterURl} target="_blank" rel="noopener noreferrer" className="p-3 rounded-full hover:bg-white/20 transition-colors cursor-pointer">
+          <LucideTwitter className="w-6 h-6 text-white" />
+        </a>
+        <a href={fbURl} target="_blank" rel="noopener noreferrer" className="p-3 rounded-full hover:bg-white/20 transition-colors cursor-pointer">
+          <LucideFacebook className="w-6 h-6 text-white" />
+        </a>
+      </div>
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black/40" />
 
