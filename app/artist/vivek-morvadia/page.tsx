@@ -174,7 +174,10 @@ export default function VivekMorvadiaEPK() {
             </div>
             <div className="rounded-xl overflow-hidden shadow-2xl">
               <iframe
-                src="https://open.spotify.com/embed/track/68nhuep4SL6oopPcOkXcQS?utm_source=generator&theme=0"
+                src="https://open.spotify.com/embed/artist/6s3Rdf9GgWkDMjIpWhRkgZ?utm_source=generator&theme=0"
+                // src="https://open.spotify.com/embed/track/6Be2cSh9zpceHXOWIhpfZl?utm_source=generator&theme=0"
+                // src="https://open.spotify.com/embed/track/68nhuep4SL6oopPcOkXcQS?utm_source=generator&theme=0"
+
                 className="w-full h-[220px] sm:h-[280px] md:h-[352px]"
                 frameBorder="0"
                 allowFullScreen
@@ -197,7 +200,29 @@ export default function VivekMorvadiaEPK() {
               <div className="relative w-full aspect-video">
                 <iframe
                   className="absolute inset-0 w-full h-full"
+                  // src="https://www.youtube.com/embed/SY5ceTJPrn4?si=pOFPPrSjjnujMiFf&rel=0&modestbranding=1&playsinline=1"
+
+                  src="https://www.youtube.com/embed/nBXwwm2kCMs?si=FOtif35UuLQ8bQEL&rel=0&modestbranding=1&playsinline=1"
+                  title="YouTube video player"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                ></iframe>
+              </div>
+            </div>
+          </div>
+          <div className="w-full md:w-[48%] space-y-4">
+            <div className="flex items-center space-x-4">
+              <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center">
+                <Play className="w-6 h-6 text-white" />
+              </div>
+              <span className="text-xl md:text-2xl font-bold">YouTube</span>
+            </div>
+            <div className="rounded-xl overflow-hidden shadow-2xl">
+              <div className="relative w-full aspect-video">
+                <iframe
+                  className="absolute inset-0 w-full h-full"
                   src="https://www.youtube.com/embed/SY5ceTJPrn4?si=pOFPPrSjjnujMiFf&rel=0&modestbranding=1&playsinline=1"
+                  // src="https://www.youtube.com/embed/nBXwwm2kCMs?si=FOtif35UuLQ8bQEL&rel=0&modestbranding=1&playsinline=1"
                   title="YouTube video player"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowFullScreen
