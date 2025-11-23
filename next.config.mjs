@@ -1,6 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "export", // <-- THIS makes Next.js fully static
   eslint: {
     ignoreDuringBuilds: true,
   },
