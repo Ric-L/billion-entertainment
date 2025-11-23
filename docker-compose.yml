@@ -25,7 +25,7 @@ services:
 
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.billion-ent.rule=Host(`admin.tomthin.in`) || Host(`www.admin.tomthin.in`) || Host(`admin.tomthin.com`) || Host(`www.admin.tomthin.com`)"
+      - "traefik.http.routers.billion-ent.rule=Host(`billionentertainment.co.in`) || Host(`www.billionentertainment.co.in`)"
       - "traefik.http.routers.billion-ent.entrypoints=websecure"
       - "traefik.http.routers.billion-ent.tls=true"
       - "traefik.http.routers.billion-ent.tls.certresolver=le"
