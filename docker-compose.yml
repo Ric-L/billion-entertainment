@@ -1,0 +1,32 @@
+networks:
+  intranet:
+    external: true
+    name: tomthin-net
+
+services:
+  billion-ent:
+    image: billion-ent-frontend:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    container_name: billion-ent
+
+    env_file:
+      - .env.local
+
+    environment:
+      - NEXT_TELEMETRY_DISABLED=1
+
+    networks:
+      - intranet
+
+    restart: always
+
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.billion-ent.rule=Host(`admin.tomthin.in`) || Host(`www.admin.tomthin.in`) || Host(`admin.tomthin.com`) || Host(`www.admin.tomthin.com`)"
+      - "traefik.http.routers.billion-ent.entrypoints=websecure"
+      - "traefik.http.routers.billion-ent.tls=true"
+      - "traefik.http.routers.billion-ent.tls.certresolver=le"
+      - "traefik.http.services.billion-ent.loadbalancer.server.port=80"
