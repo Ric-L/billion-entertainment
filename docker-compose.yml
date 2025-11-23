@@ -12,9 +12,6 @@ services:
 
     container_name: billion-ent
 
-    env_file:
-      - .env.local
-
     environment:
       - NEXT_TELEMETRY_DISABLED=1
 
