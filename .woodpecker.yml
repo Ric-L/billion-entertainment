@@ -6,3 +6,7 @@ steps:
       - docker compose -p billion-ent up -d
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock # Use host Docker daemon
+
+    when:
+      event: push
+      branch: main
