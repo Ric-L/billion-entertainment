@@ -43,25 +43,33 @@ const videos = [
 ];
 
 export default function VideoCarousel() {
-  const [currentVideo, setCurrentVideo] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [prevIndex, setPrevIndex] = useState<number | null>(null);
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     setIsVisible(true);
     const interval = setInterval(() => {
-      setCurrentVideo((prev) => (prev + 1) % videos.length);
-    }, 8000); // Change video every 8 seconds
+      setCurrentIndex((prev) => (prev + 1) % videos.length);
+    }, 8000);
 
     return () => clearInterval(interval);
   }, []);
 
+  const changeIndex = (newIndex: number) => {
+    setPrevIndex(currentIndex);
+    setCurrentIndex(newIndex);
+    setTimeout(() => setPrevIndex(null), 1000);
+  };
+
   const nextVideo = () => {
-    setCurrentVideo((prev) => (prev + 1) % videos.length);
+    changeIndex((currentIndex + 1) % videos.length);
   };
 
   const prevVideo = () => {
-    setCurrentVideo((prev) => (prev - 1 + videos.length) % videos.length);
+    changeIndex((currentIndex - 1 + videos.length) % videos.length);
   };
+
   const instagramUrl = "https://www.instagram.com/vivek_morvadia";
   const youtubeUrl = "https://www.youtube.com/@BillionEntertainment";
   const twitterURl = "https://x.com/billionent1";
@@ -71,13 +79,29 @@ export default function VideoCarousel() {
     <section className="relative h-screen w-full overflow-hidden">
       {/* Video Background */}
       <div className="absolute inset-0">
-        {videos.map((video, index) => (
-          <div key={video.id} className={`absolute inset-0 transition-opacity duration-1000 ${index === currentVideo ? "opacity-100" : "opacity-0"}`}>
+        {/* Current video */}
+        <div key={videos[currentIndex].id} className="absolute inset-0 transition-opacity duration-1000 opacity-100">
+          <div className="video-bg">
+            <iframe
+              src={`https://www.youtube.com/embed/${videos[currentIndex].id}?autoplay=1&mute=1&loop=1&playlist=${videos[currentIndex].id}&controls=0&rel=0&iv_load_policy=3&modestbranding=1&playsinline=1&disablekb=1&fs=0`}
+              className="video-bg-iframe"
+              allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
+              allowFullScreen
+              referrerPolicy="no-referrer-when-downgrade"
+              style={{
+                pointerEvents: "none",
+                border: "none",
+              }}
+            />
+          </div>
+        </div>
+
+        {/* Previous video during transition */}
+        {prevIndex !== null && (
+          <div key={videos[prevIndex].id} className="absolute inset-0 transition-opacity duration-1000 opacity-0">
             <div className="video-bg">
               <iframe
-                src={`https://www.youtube.com/embed/${video.id}?autoplay=1&mute=1&loop=1&playlist=${video.id}&
-controls=0&rel=0&
-iv_load_policy=3&modestbranding=1&playsinline=1&disablekb=1&fs=0`}
+                src={`https://www.youtube.com/embed/${videos[prevIndex].id}?autoplay=1&mute=1&loop=1&playlist=${videos[prevIndex].id}&controls=0&rel=0&iv_load_policy=3&modestbranding=1&playsinline=1&disablekb=1&fs=0`}
                 className="video-bg-iframe"
                 allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
                 allowFullScreen
@@ -89,61 +113,64 @@ iv_load_policy=3&modestbranding=1&playsinline=1&disablekb=1&fs=0`}
               />
             </div>
           </div>
-        ))}
+        )}
       </div>
-      <div className="absolute top-8 right-8 z-30 flex items-center space-x-4">
-        <a href={instagramUrl} target="_blank" rel="noopener noreferrer" className="p-3 rounded-full hover:bg-white/20 transition-colors cursor-pointer">
-          <InstagramIcon className="w-6 h-6 text-white" />
+
+      {/* Social icons - adjusted padding and size for mobile */}
+      <div className="absolute top-4 right-4 sm:top-8 sm:right-8 z-30 flex items-center space-x-2 sm:space-x-4">
+        <a href={instagramUrl} target="_blank" rel="noopener noreferrer" className="p-2 sm:p-3 rounded-full hover:bg-white/20 transition-colors cursor-pointer">
+          <InstagramIcon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
         </a>
-        <a href={youtubeUrl} target="_blank" rel="noopener noreferrer" className="p-3 rounded-full hover:bg-white/20 transition-colors cursor-pointer">
-          <Youtube className="w-6 h-6 text-white" />
+        <a href={youtubeUrl} target="_blank" rel="noopener noreferrer" className="p-2 sm:p-3 rounded-full hover:bg-white/20 transition-colors cursor-pointer">
+          <Youtube className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
         </a>
-        <a href={twitterURl} target="_blank" rel="noopener noreferrer" className="p-3 rounded-full hover:bg-white/20 transition-colors cursor-pointer">
-          <LucideTwitter className="w-6 h-6 text-white" />
+        <a href={twitterURl} target="_blank" rel="noopener noreferrer" className="p-2 sm:p-3 rounded-full hover:bg-white/20 transition-colors cursor-pointer">
+          <LucideTwitter className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
         </a>
-        <a href={fbURl} target="_blank" rel="noopener noreferrer" className="p-3 rounded-full hover:bg-white/20 transition-colors cursor-pointer">
-          <LucideFacebook className="w-6 h-6 text-white" />
+        <a href={fbURl} target="_blank" rel="noopener noreferrer" className="p-2 sm:p-3 rounded-full hover:bg-white/20 transition-colors cursor-pointer">
+          <LucideFacebook className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
         </a>
       </div>
+
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black/40" />
 
       {/* Content Overlay */}
-      <div className="relative z-10 flex items-center justify-center h-full px-4">
-        <div className="text-center text-white max-w-4xl">
+      <div className="relative z-10 flex items-center justify-center h-full px-4 sm:px-6">
+        <div className="text-center text-white max-w-3xl sm:max-w-4xl">
           <div className={`transition-all duration-1000 ${isVisible ? "animate-fade-in-up opacity-100" : "opacity-0"}`}>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-balance">
+            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-4 sm:mb-6 text-balance">
               BILLION
-              <span className="block text-balance ">ENTERTAINMENT</span>
+              <span className="block text-balance">ENTERTAINMENT</span>
             </h1>
-            <p className="text-xl md:text-2xl mb-8 text-pretty leading-relaxed">{videos[currentVideo].description}</p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <p className="text-lg font-medium">
-                Featuring: <span className="text-primary">{videos[currentVideo].artist}</span>
+            <p className="text-lg sm:text-xl md:text-2xl mb-6 sm:mb-8 text-pretty leading-relaxed">{videos[currentIndex].description}</p>
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
+              <p className="text-base sm:text-lg font-medium">
+                Featuring: <span className="text-primary">{videos[currentIndex].artist}</span>
               </p>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Navigation Controls */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
-        <div className="flex items-center gap-4">
-          <Button variant="outline" size="icon" onClick={prevVideo} className="bg-white/20 border-white/30 text-white hover:bg-white/30">
+      {/* Navigation Controls - larger touch targets on mobile */}
+      <div className="absolute bottom-6 sm:bottom-8 left-1/2 transform -translate-x-1/2 z-20">
+        <div className="flex items-center gap-3 sm:gap-4">
+          <Button variant="outline" size="icon" onClick={prevVideo} className="h-8 w-8 sm:h-9 sm:w-9 bg-white/20 border-white/30 text-white hover:bg-white/30">
             <ChevronLeft className="h-4 w-4" />
           </Button>
 
-          <div className="flex gap-2">
+          <div className="flex gap-1.5 sm:gap-2">
             {videos.map((_, index) => (
               <button
                 key={index}
-                onClick={() => setCurrentVideo(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentVideo ? "bg-primary scale-125" : "bg-white/50 hover:bg-white/70"}`}
+                onClick={() => changeIndex(index)}
+                className={`w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${index === currentIndex ? "bg-primary scale-125" : "bg-white/50 hover:bg-white/70"}`}
               />
             ))}
           </div>
 
-          <Button variant="outline" size="icon" onClick={nextVideo} className="bg-white/20 border-white/30 text-white hover:bg-white/30">
+          <Button variant="outline" size="icon" onClick={nextVideo} className="h-8 w-8 sm:h-9 sm:w-9 bg-white/20 border-white/30 text-white hover:bg-white/30">
             <ChevronRight className="h-4 w-4" />
           </Button>
         </div>
@@ -162,22 +189,19 @@ iv_load_policy=3&modestbranding=1&playsinline=1&disablekb=1&fs=0`}
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%);
-          /* Default to 16:9 fit by width; overridden by aspect-ratio queries below */
           width: 100vw;
-          height: 56.25vw; /* 9/16 of width */
+          height: 56.25vw;
         }
-        /* Portrait or narrow screens: expand by height so video covers fully */
         @media (max-aspect-ratio: 16/9) {
           .video-bg-iframe {
-            width: 177.78vh; /* 16/9 * 100vh */
+            width: 177.78vh;
             height: 100vh;
           }
         }
-        /* Landscape or wide screens: expand by width so video covers fully */
         @media (min-aspect-ratio: 16/9) {
           .video-bg-iframe {
             width: 100vw;
-            height: 56.25vw; /* 9/16 of width */
+            height: 56.25vw;
           }
         }
       `}</style>
