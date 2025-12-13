@@ -18,6 +18,7 @@ export interface Artist {
   topTracks?: string[];
   influences?: string[];
   services?: string[];
+  embedded?: string[];
   upcomingReleases?: string[];
   accentColor: string;
 }
@@ -78,6 +79,11 @@ export const artists: Artist[] = [
     influences: ["Classical Indian Music", "Contemporary Pop", "Manipuri Folk"],
     services: ["Live Concerts", "Studio Recording", "Music Composition", "Collaborations"],
     accentColor: "amber",
+    embedded: [
+      "https://open.spotify.com/embed/artist/3KwjlPQqW7PhF5xIHTpLKS?utm_source=generator&theme=0",
+      "https://www.youtube.com/embed/X6qKio2rnMg?si=6VRu4beuPCVnTmzx",
+      "https://www.youtube.com/embed/otAewaf8sUU?si=QxRuZaQn_mubRdwH",
+    ],
   },
   {
     id: "yarsin",
@@ -102,6 +108,11 @@ export const artists: Artist[] = [
     influences: ["Adele", "The 1975", "Paramore", "Queen", "Lady Gaga"],
     services: ["Live Performances", "Studio Sessions", "Cover Songs", "Original Music"],
     accentColor: "rose",
+    embedded: [
+      "https://open.spotify.com/embed/artist/7eoFGhcFswM9wHWZObCBXM?utm_source=generator",
+      "https://www.youtube.com/embed/AbmLsE6sMzA?si=xbe3eOnUUz4HwC0O",
+      "https://www.youtube.com/embed/k_B9puO8b2Q?si=zen8J-po56wIcXOp",
+    ],
   },
   {
     id: "mc-lean",
@@ -126,6 +137,11 @@ export const artists: Artist[] = [
     influences: ["Gunna", "Playboi Carti", "Lil Baby", "Drake", "Tory Lanez"],
     services: ["Live Shows", "Studio Recording", "Collaborations", "Features"],
     accentColor: "cyan",
+    embedded: [
+      "https://www.youtube.com/embed/fxey8AbEqUY?si=o1eDNtoS2qSyfkSR",
+      "https://www.youtube.com/embed/QLSJO1gnArg?si=2hSa7RjsWL4lU6Vc",
+      "https://www.youtube.com/embed/gNwuTOjrD0o?si=W3XPR1FWRPLaxlFA",
+    ],
   },
   {
     id: "tuhin-handique",
@@ -152,6 +168,11 @@ export const artists: Artist[] = [
     influences: ["Indie Artists", "Acoustic Folk", "Contemporary Pop"],
     services: ["Live Concerts", "Studio Recording", "Songwriting", "Guitar Sessions"],
     accentColor: "emerald",
+    embedded: [
+      "https://open.spotify.com/embed/artist/6nySCJ1ZsWj9bq5b5l6J1E?utm_source=generator",
+      "https://www.youtube.com/embed/t0pqbtUoZ4M?si=L5b51XD_THuK9Uzi",
+      "https://www.youtube.com/embed/NIptg_rWorA?si=NDbR1k4GCOw6si6q",
+    ],
   },
 ];
 
