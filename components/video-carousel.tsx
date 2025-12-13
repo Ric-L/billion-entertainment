@@ -139,7 +139,7 @@ export default function VideoCarousel() {
       <div className="relative z-10 flex items-center justify-center h-full px-4 sm:px-6">
         <div className="text-center text-white max-w-3xl sm:max-w-4xl">
           <div className={`transition-all duration-1000 ${isVisible ? "animate-fade-in-up opacity-100" : "opacity-0"}`}>
-            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-4 sm:mb-6 text-balance">
+            <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-4 sm:mb-6 text-balance">
               BILLION
               <span className="block text-balance">ENTERTAINMENT</span>
             </h1>
