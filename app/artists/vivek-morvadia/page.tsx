@@ -147,7 +147,7 @@ export default function VivekMorvadiaEPK() {
       </div>
 
       {/* Media Section */}
-      <section className="min-h-screen bg-gradient-to-t from-black via-slate-900 to-slate-800 p-8">
+      <section className="min-h-screen bg-gradient-to-t from-slate-800 via-slate-900 to-slate-800 p-8">
         <div className="max-w-7xl mx-auto flex flex-wrap gap-12 items-start">
           {/* Showreel */}
           <div className="w-full md:w-[48%] space-y-4">
@@ -243,33 +243,9 @@ export default function VivekMorvadiaEPK() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gradient-to-t from-black via-slate-900 to-slate-800 border-t border-white/10">
+      <footer className="bg-gradient-to-b from-slate-800 via-slate-900 ">
         <div className="max-w-7xl mx-auto px-8 py-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-            <div className="lg:col-span-2 space-y-6">
-              <div className="flex items-center space-x-4">
-                <div className="w-16 h-16 bg-gradient-to-br from-purple-600 to-pink-600 rounded-full flex items-center justify-center">
-                  <span className="text-white font-bold text-lg">VM</span>
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold tracking-wider">VIVEK MORVADIA</h3>
-                  <p className="text-white/60">Artist • Vocalist • Performer</p>
-                </div>
-              </div>
-              <p className="text-white/80 max-w-md leading-relaxed">
-                From the cultural heart of Gujarat to stages across India, bringing soulful music and unforgettable performances to every audience.
-              </p>
-              <div className="flex space-x-4">
-                <a href={instagramUrl} target="_blank" rel="noopener noreferrer" className="p-3 rounded-full hover:bg-white/20 transition-colors cursor-pointer">
-                  <Instagram className="w-5 h-5" />
-                </a>
-                <a href={youtubeUrl} target="_blank" rel="noopener noreferrer" className="p-3 rounded-full hover:bg-white/20 transition-colors cursor-pointer">
-                  <Youtube className="w-5 h-5" />
-                </a>
-                {/* Add more if you have other socials */}
-              </div>
-            </div>
-
             <div className="space-y-6">
               <h4 className="text-lg font-semibold tracking-wider">SERVICES</h4>
               <ul className="space-y-3 text-white/70">
