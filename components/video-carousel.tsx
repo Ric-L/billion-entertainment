@@ -14,7 +14,7 @@ const videos = [
   },
   {
     // id: "dQw4w9WgXcQ", // Rick Astley - Never Gonna Give You Up (example)
-    id: "X6qKio2rnMg",
+    id: "gdsRyn22CAE",
     title: "Featured Artist Performance",
     artist: "AJ Maisnam",
     // description: "Experience the energy of live performance",
@@ -28,14 +28,15 @@ const videos = [
   },
   {
     // id: "dQw4w9WgXcQ", // Rick Astley - Never Gonna Give You Up (example)
-    id: "AbmLsE6sMzA",
+    id: "4RuGYsxsKTI",
     title: "Featured Artist Performance",
     artist: "Yarsin",
     // description: "Experience the energy of live performance",
   },
   {
+    // "https://www.youtube.com/embed/B2Hn-xkaRVY?si=RYSofPsG_rNz08yy"
     // id: "dQw4w9WgXcQ", // Rick Astley - Never Gonna Give You Up (example)
-    id: "AbmLsE6sMzA",
+    id: "B2Hn-xkaRVY",
     title: "Featured Artist Performance",
     artist: "Tuhin Handique",
     // description: "Experience the energy of live performance",
@@ -51,7 +52,7 @@ export default function VideoCarousel() {
     setIsVisible(true);
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % videos.length);
-    }, 8000);
+    }, 12000);
 
     return () => clearInterval(interval);
   }, []);

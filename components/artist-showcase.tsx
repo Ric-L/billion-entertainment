@@ -59,11 +59,7 @@ export default function ArtistShowcase() {
       <div className="max-w-7xl mx-auto">
         {/* Header - with increased bottom margin */}
         <div className={`text-center pb-24 md:mb-24 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
-          <h2 className="text-4xl md:text-6xl font-bold mb-4 text-white">
-            OUR ARTISTS
-            <span className="block text-gray-400 text-3xl md:text-5xl">WE SPONSOR</span>
-          </h2>
-          <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mt-6">Meet the incredible talent we're proud to support on their journey to stardom</p>
+          <h2 className="text-4xl md:text-6xl font-bold mb-4 text-white">OUR ARTISTS</h2>
         </div>
 
         {/* Desktop/Tablet: Compact 3D Carousel */}
