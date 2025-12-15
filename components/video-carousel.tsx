@@ -21,14 +21,14 @@ const videos = [
 	},
 	{
 		// id: "dQw4w9WgXcQ", // Rick Astley - Never Gonna Give You Up (example)
-		id: 'gNwuTOjrD0o',
+		id: 'SSiVtxDhcl0',
 		title: 'Featured Artist Performance',
 		artist: 'MC LEAN',
 		// description: "Experience the energy of live performance",
 	},
 	{
 		// id: "dQw4w9WgXcQ", // Rick Astley - Never Gonna Give You Up (example)
-		id: '4RuGYsxsKTI',
+		id: 'E-IKG3eMnoA',
 		title: 'Featured Artist Performance',
 		artist: 'Yarsin Chanu',
 		// description: "Experience the energy of live performance",
