@@ -137,7 +137,6 @@ export const artists: Artist[] = [
 			'/music/Yarsin/Yarshin3.wav',
 			'/music/Yarsin/Yarshin4.wav',
 			'/music/Yarsin/Yarshin5.wav',
-			'/music/Yarsin/Yarshin6.wav',
 		],
 	},
 	{
