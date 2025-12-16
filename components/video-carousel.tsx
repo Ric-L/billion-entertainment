@@ -36,7 +36,7 @@ const videos = [
 	{
 		// "https://www.youtube.com/embed/B2Hn-xkaRVY?si=RYSofPsG_rNz08yy"
 		// id: "dQw4w9WgXcQ", // Rick Astley - Never Gonna Give You Up (example)
-		id: 'B2Hn-xkaRVY',
+		id: 'hwX4WszzBpM',
 		title: 'Featured Artist Performance',
 		artist: 'Tuhin Handique',
 		// description: "Experience the energy of live performance",
