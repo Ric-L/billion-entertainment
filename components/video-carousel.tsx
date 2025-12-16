@@ -71,7 +71,7 @@ export default function VideoCarousel() {
 		changeIndex((currentIndex - 1 + videos.length) % videos.length);
 	};
 
-	const instagramUrl = 'https://www.instagram.com/vivek_morvadia';
+	const instagramUrl = 'https://www.instagram.com/billionentertainment19/';
 	const youtubeUrl = 'https://www.youtube.com/@BillionEntertainment';
 	const twitterURl = 'https://x.com/billionent1';
 	const fbURl = 'https://www.facebook.com/share/17SYDwkzQE/';

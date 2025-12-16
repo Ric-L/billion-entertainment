@@ -58,7 +58,7 @@ export const artists: Artist[] = [
 			'https://www.youtube.com/embed/nBXwwm2kCMs?si=t9CmJfz9Ta8RTLcu',
 		],
 
-		unreleased: ['/music/vivek/Bengaluru_Traffic.mp3', '/music/vivek/Mera.mp3'],
+		unreleased: ['/music/vivek/Bengaluru_Traffic.mp3', '/music/vivek/Mera.mp3', '/music/vivek/cofee.mp3'],
 	},
 
 	{
@@ -167,7 +167,7 @@ export const artists: Artist[] = [
 			'https://www.youtube.com/embed/QLSJO1gnArg?si=2hSa7RjsWL4lU6Vc',
 			'https://www.youtube.com/embed/gNwuTOjrD0o?si=W3XPR1FWRPLaxlFA',
 		],
-		unreleased: ['/music/MCLean/lean1.wav', '/music/MCLean/lean2.wav', '/music/MCLean/lean3.wav', '/music/MCLean/lean4.wav'],
+		unreleased: ['/music/MClean/lean1.wav', '/music/MClean/lean2.wav', '/music/MClean/lean3.wav', '/music/MClean/lean4.wav'],
 	},
 	{
 		id: 'tuhin-handique',
