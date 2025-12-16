@@ -113,32 +113,42 @@ export default function TuhinEPK({ artist }: { artist: Artist }) {
 
 			{/* Media Showcase */}
 			{artist.embedded && artist.embedded.length > 0 && (
-				<section className="py-20 bg-white">
+				<section id="media" className="py-20">
 					<div className="container mx-auto px-4">
-						<div className="text-center mb-16">
-							<h2 className="text-5xl font-bold mb-4 text-gray-900">Featured Tracks</h2>
-							<p className="text-gray-700 text-lg">Experience the music</p>
-						</div>
-						<div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-							{artist.embedded.map((embed, i) => {
-								const isSpotify = embed.includes('spotify.com');
+						<h2 className="text-5xl font-bold mb-12 text-center">
+							<span className="text-emerald-700">Listen & Watch</span>
+						</h2>
 
-								return (
-									<div
-										key={i}
-										className={`rounded-xl overflow-hidden border-2 border-amber-600/30 ${
-											isSpotify ? 'h-[480px] lg:col-span-2' : 'aspect-video'
-										}`}
-									>
+						{/* Spotify Section */}
+						<div className="max-w-4xl mx-auto mb-16">
+							{artist.embedded
+								.filter((embed) => embed.includes('spotify.com'))
+								.map((embed, i) => (
+									<div key={`spotify-${i}`} className="rounded-xl overflow-hidden border-2 border-amber-600/30">
+										<iframe
+											src={embed}
+											className="w-full h-[380px]"
+											allow="autoplay; clipboard-write; encrypted-media; picture-in-picture"
+										/>
+									</div>
+								))}
+						</div>
+
+						{/* YouTube Section */}
+						<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+							{artist.embedded
+								.filter((embed) => embed.includes('youtube.com') || embed.includes('youtu.be'))
+								.slice(0, 3)
+								.map((embed, i) => (
+									<div key={`youtube-${i}`} className="aspect-video rounded-xl overflow-hidden border-2 border-amber-600/30">
 										<iframe
 											src={embed}
 											className="w-full h-full"
-											allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-											allowFullScreen={!isSpotify}
+											allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
+											allowFullScreen
 										/>
 									</div>
-								);
-							})}
+								))}
 						</div>
 					</div>
 				</section>
@@ -239,7 +249,7 @@ export default function TuhinEPK({ artist }: { artist: Artist }) {
 				<section className="py-20 bg-white">
 					<div className="container mx-auto px-4">
 						<div className="max-w-4xl mx-auto text-center">
-							<h2 className="text-5xl font-bold mb-12 text-gray-900">What I Offer</h2>
+							<h2 className="text-5xl font-bold mb-12 text-gray-900">What We Offer</h2>
 							<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 								{artist.services.map((service) => (
 									<Card key={service} className="p-6 border-2 border-emerald-200 hover:border-emerald-400 transition-colors">

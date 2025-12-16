@@ -198,6 +198,7 @@ export const artists: Artist[] = [
 			'https://open.spotify.com/embed/artist/6nySCJ1ZsWj9bq5b5l6J1E?utm_source=generator',
 			'https://www.youtube.com/embed/t0pqbtUoZ4M?si=L5b51XD_THuK9Uzi',
 			'https://www.youtube.com/embed/NIptg_rWorA?si=NDbR1k4GCOw6si6q',
+			'https://www.youtube.com/embed/Nn0vYGrnzBQ?si=9KZmJegh4EC3phij',
 		],
 		unreleased: ['/music/tuhin/pehli.wav', '/music/tuhin/beqaboo.wav', '/music/tuhin/jatra.wav', '/music/tuhin/Khwaboon.wav'],
 	},
