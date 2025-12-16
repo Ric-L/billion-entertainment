@@ -96,8 +96,8 @@ export const artists: Artist[] = [
 			'https://www.youtube.com/embed/GjCXlPQQrIk?si=LRk1NspRjWUZaNUL',
 		],
 		unreleased: [
-			'/music/ajmaisnam/EISE_EIGIRA.wav',
 			'/music/ajmaisnam/huranhurandemoversion.wav',
+			'/music/ajmaisnam/EISE_EIGIRA.wav',
 			'/music/ajmaisnam/KarambaWahei.mp3',
 			'/music/ajmaisnam/Newsad.mp3',
 			'/music/ajmaisnam/WAYELKATTI.wav',
@@ -132,9 +132,9 @@ export const artists: Artist[] = [
 			'https://www.youtube.com/embed/k_B9puO8b2Q?si=zen8J-po56wIcXOp',
 		],
 		unreleased: [
+			'/music/Yarsin/Yarshin3.wav',
 			'/music/Yarsin/Yarshin1.wav',
 			'/music/Yarsin/Yarshin2.wav',
-			'/music/Yarsin/Yarshin3.wav',
 			'/music/Yarsin/Yarshin4.wav',
 			'/music/Yarsin/Yarshin5.wav',
 		],
@@ -167,7 +167,7 @@ export const artists: Artist[] = [
 			'https://www.youtube.com/embed/QLSJO1gnArg?si=2hSa7RjsWL4lU6Vc',
 			'https://www.youtube.com/embed/gNwuTOjrD0o?si=W3XPR1FWRPLaxlFA',
 		],
-		unreleased: ['/music/MClean/lean1.wav', '/music/MClean/lean2.wav', '/music/MClean/lean3.wav', '/music/MClean/lean4.wav'],
+		unreleased: ['/music/MClean/lean3.wav', '/music/MClean/lean2.wav', '/music/MClean/lean1.wav', '/music/MClean/lean4.wav', '/music/MClean/lean5.mp3'],
 	},
 	{
 		id: 'tuhin-handique',
@@ -199,7 +199,7 @@ export const artists: Artist[] = [
 			'https://www.youtube.com/embed/t0pqbtUoZ4M?si=L5b51XD_THuK9Uzi',
 			'https://www.youtube.com/embed/NIptg_rWorA?si=NDbR1k4GCOw6si6q',
 		],
-		unreleased: ['/music/tuhin/beqaboo.wav', '/music/tuhin/jatra.wav', '/music/tuhin/Khwaboon.wav', '/music/tuhin/pehli.wav'],
+		unreleased: ['/music/tuhin/pehli.wav', '/music/tuhin/beqaboo.wav', '/music/tuhin/jatra.wav', '/music/tuhin/Khwaboon.wav'],
 	},
 ];
 
