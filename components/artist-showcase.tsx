@@ -511,9 +511,7 @@ function ArtistCard({
 				{artist.name.toUpperCase()}
 			</h3>
 
-			<div
-				className={`absolute top-4 right-4 flex flex-col gap-3 transition-all ${isHovered ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}
-			>
+			<div className={`absolute top-4 right-4 flex flex-col gap-3 `}>
 				{artist.socials.instagram && (
 					<Button size="icon" className="bg-black/70">
 						<Instagram />
