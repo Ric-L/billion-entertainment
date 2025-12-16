@@ -99,7 +99,7 @@ export const artists: Artist[] = [
 			'/music/ajmaisnam/EISE_EIGIRA.wav',
 			'/music/ajmaisnam/huranhurandemoversion.wav',
 			'/music/ajmaisnam/KarambaWahei.mp3',
-			'/music/ajmaisnam/NewSad.mp3',
+			'/music/ajmaisnam/Newsad.mp3',
 			'/music/ajmaisnam/WAYELKATTI.wav',
 		],
 	},
@@ -167,12 +167,7 @@ export const artists: Artist[] = [
 			'https://www.youtube.com/embed/QLSJO1gnArg?si=2hSa7RjsWL4lU6Vc',
 			'https://www.youtube.com/embed/gNwuTOjrD0o?si=W3XPR1FWRPLaxlFA',
 		],
-		unreleased: [
-			'/music/MCLean/unreleasedMC_(1).wav',
-			'/music/MCLean/unreleasedMC_(2).wav',
-			'/music/MCLean/unreleasedMC_(3).wav',
-			'/music/MCLean/unreleasedMC_(4).wav',
-		],
+		unreleased: ['/music/MCLean/lean1.wav', '/music/MCLean/lean2.wav', '/music/MCLean/lean3.wav', '/music/MCLean/lean4.wav'],
 	},
 	{
 		id: 'tuhin-handique',
