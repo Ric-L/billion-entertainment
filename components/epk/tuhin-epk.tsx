@@ -6,8 +6,11 @@ import { Instagram, Youtube, Music, Facebook, ArrowLeft, Mail, Guitar, Sparkles 
 import Link from 'next/link';
 import Footer from '../footer';
 import { Artist } from '@/lib/artist';
+import { useRef, useState } from 'react';
 
 export default function TuhinEPK({ artist }: { artist: Artist }) {
+	const [activeTrack, setActiveTrack] = useState(0);
+	const videoRef = useRef<HTMLVideoElement | null>(null);
 	return (
 		<div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50 to-emerald-50">
 			{/* Artistic Header */}
@@ -142,40 +145,57 @@ export default function TuhinEPK({ artist }: { artist: Artist }) {
 			)}
 
 			{artist.unreleased && artist.unreleased.length > 0 && (
-				<section id="unreleased" className="py-20 bg-gradient-to-b from-emerald-50 to-white">
-					<div className="container mx-auto px-4">
-						<div className="max-w-5xl mx-auto">
-							<div className="flex items-center gap-6 mb-16">
-								<div className="h-2 w-16 bg-emerald-500 rounded-full" />
-								<h2 className="text-5xl font-bold text-gray-900">Unreleased Tracks</h2>
-							</div>
+				<section id="unreleased" className="py-14">
+					<div className="container mx-auto px-4 max-w-4xl">
+						<h2 className="text-3xl font-bold mb-6 text-center text-gray-900">
+							<span className="text-emerald-500">Unreleased</span> Tracks
+						</h2>
 
-							<div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-								{artist.unreleased.map((track, index) => (
-									<div
+						{/* MINI PLAYER */}
+						<div className="bg-white border border-amber-200 rounded-xl px-3 py-2 mb-4 shadow-sm">
+							<video
+								ref={videoRef}
+								src={artist.unreleased[activeTrack]}
+								controls
+								controlsList="nodownload noremoteplayback nofullscreen"
+								onContextMenu={(e) => e.preventDefault()}
+								className="w-full h-9 rounded"
+							/>
+						</div>
+
+						{/* TRACK LIST */}
+						<div className="bg-white border border-amber-200 rounded-xl divide-y overflow-hidden shadow-sm">
+							{artist.unreleased.map((_, index) => {
+								const isActive = index === activeTrack;
+
+								return (
+									<button
 										key={index}
-										className="bg-white rounded-3xl border border-emerald-100 shadow-xl p-6 hover:shadow-2xl transition-shadow"
+										onClick={() => {
+											setActiveTrack(index);
+											setTimeout(() => videoRef.current?.play(), 0);
+										}}
+										className={`w-full flex items-center justify-between px-4 py-3 text-left transition
+								${isActive ? 'bg-amber-50' : 'hover:bg-orange-50'}`}
 									>
-										<div className="flex items-center justify-between mb-4">
-											<div className="flex items-center gap-2 text-emerald-700 font-semibold">
-												<Sparkles className="w-5 h-5" />
-												<span>Unreleased #{index + 1}</span>
+										<div className="flex items-center gap-3">
+											<div
+												className={`w-8 h-8 flex items-center justify-center rounded-full text-sm
+									${isActive ? 'bg-amber-500 text-white' : 'bg-gray-200 text-gray-600'}`}
+											>
+												{isActive ? '❚❚' : '▶'}
 											</div>
-											<span className="text-sm text-gray-500">Preview Only</span>
+
+											<div>
+												<p className={`text-sm font-medium ${isActive ? 'text-amber-600' : 'text-gray-800'}`}>Track {index + 1}</p>
+												<p className="text-[11px] text-gray-500">Preview only</p>
+											</div>
 										</div>
 
-										<video
-											src={track}
-											controls
-											controlsList="nodownload noremoteplayback nofullscreen"
-											onContextMenu={(e) => e.preventDefault()}
-											className="w-full h-48 rounded-2xl border border-emerald-200 shadow-inner"
-										/>
-
-										<p className="text-sm text-gray-600 mt-4 text-center">For listening purposes only</p>
-									</div>
-								))}
-							</div>
+										<Sparkles className={`w-4 h-4 ${isActive ? 'text-amber-500' : 'text-gray-300'}`} />
+									</button>
+								);
+							})}
 						</div>
 					</div>
 				</section>

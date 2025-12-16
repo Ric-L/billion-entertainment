@@ -31,15 +31,15 @@ export const artists: Artist[] = [
 		role: 'Artist • Performer • Vocalist',
 		location: 'Bodaka, Gujarat, India',
 		genres: ['Pop', 'Soft Rock', 'Folk'],
-		bio: 'A dynamic and soulful artist with 10,000 shows and a growing discography.',
+		bio: 'A dynamic and soulful artist with 2,000 shows and a growing discography.',
 		fullBio:
-			'Born in the culturally vibrant village of Bodaka in Junagadh, Gujarat, Vivek Morvadia has come a long way from his humble beginnings to become a dynamic and soulful artist, whose voice now echoes across stages, celebrations, and digital platforms.\n\nAt just 30 years old, Vivek has already crafted a musical legacy with more than 2,000 shows under his belt. Beyond covers and live performances, Vivek has also ventured into the realm of original music.\n\nIn August 2025, he released his debut single "Sirf Tu", which garnered notable success and marked his entry into the independent music scene. Building on this momentum, Vivek is set to release another heartfelt single, "Bikhre Armaan" on October 10th, which will be followed by an eagerly awaited EP featuring six tracks in November 2025.\n\nVivek\'s vocal style is deeply influenced by legends like KK, Arijit Singh, A.R. Rahman, Pritam, and Mithoon. He has collaborated with notable artists such as Kushal Chokshi, bringing diverse flavors to his performances and recordings.',
+			'Born in the culturally vibrant village of Bodaka in Junagadh, Gujarat, Vivek Morvadia has come a long way from his humble beginnings to become a dynamic and soulful artist, whose voice now echoes across stages, celebrations, and digital platforms.\n\nAt just 30 years old, Vivek has already crafted a musical legacy with more than 2,000 shows under his belt. Beyond covers and live performances, Vivek has also ventured into the realm of original music.\n\nIn August 2025, he released his debut single "Sirf Tu", which garnered notable success and marked his entry into the independent music scene. Building on this momentum, Vivek is set to release another heartfelt single, "Bikhre Armaan" on October 10th, which will be followed by an eagerly awaited EP featuring six tracks in February 2026.\n\nVivek\'s vocal style is deeply influenced by legends like KK, Arijit Singh, A.R. Rahman, Pritam, and Mithoon. He has collaborated with notable artists such as Kushal Chokshi, bringing diverse flavors to his performances and recordings.',
 		image: '/2.png',
 		heroImage: '/still2.png',
 		stats: [
 			{ label: 'Live Shows', value: '2,000' },
 			{ label: 'Original Singles', value: '3' },
-			{ label: 'Upcoming EP', value: 'February 2025' },
+			{ label: 'Upcoming EP', value: 'February 2026' },
 		],
 		socials: {
 			spotify: 'https://open.spotify.com/artist/6s3Rdf9GgWkDMjIpWhRkgZ',
@@ -47,10 +47,16 @@ export const artists: Artist[] = [
 			instagram: 'https://www.instagram.com/vivek_morvadia',
 		},
 		topTracks: ['Sirf Tu', 'Bikhre Armaan (Upcoming)'],
-		upcomingReleases: ['Bikhre Armaan - October 10th', '6-Track EP - November 2025'],
+		upcomingReleases: ['Bikhre Armaan - October 10th', '6-Track EP - February 2026'],
 		influences: ['KK', 'Arijit Singh', 'A.R. Rahman', 'Pritam', 'Mithoon'],
 		services: ['Playback Singing', 'Live Concerts', 'Wedding Performances', 'Corporate Events', 'Studio Recording'],
 		accentColor: 'orange',
+		embedded: [
+			'https://open.spotify.com/embed/artist/6s3Rdf9GgWkDMjIpWhRkgZ',
+			'https://www.youtube.com/embed/SY5ceTJPrn4?si=FnuOlzqCqDYw_GM0',
+			'https://www.youtube.com/embed/3EknGAr0Nog?si=lPDSPcDwHtWZ1M0f',
+			'https://www.youtube.com/embed/nBXwwm2kCMs?si=t9CmJfz9Ta8RTLcu',
+		],
 
 		unreleased: ['/music/vivek/Bengaluru_Traffic.mp3', '/music/vivek/Mera.mp3'],
 	},
@@ -92,7 +98,7 @@ export const artists: Artist[] = [
 		unreleased: [
 			'/music/ajmaisnam/EISE_EIGIRA.wav',
 			'/music/ajmaisnam/huranhurandemoversion.wav',
-			// '/music/ajmaisnam/KarambaWahei.mp3',
+			'/music/ajmaisnam/KarambaWahei.mp3',
 			'/music/ajmaisnam/NewSad.mp3',
 			'/music/ajmaisnam/WAYELKATTI.wav',
 		],

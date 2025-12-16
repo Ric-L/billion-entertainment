@@ -2,11 +2,15 @@
 
 import type { Artist } from '@/lib/artists';
 import { Button } from '@/components/ui/button';
-import { Instagram, Youtube, Music, Facebook, ArrowLeft, Mail } from 'lucide-react';
+import { Instagram, Youtube, Music, Facebook, ArrowLeft, Mail, Sparkles } from 'lucide-react';
 import Link from 'next/link';
 import ReactPlayer from 'react-player';
 import AudioPlayer from 'react-h5-audio-player';
+import { useRef, useState } from 'react';
 export default function AJEpk({ artist }: { artist: Artist }) {
+	const [activeTrack, setActiveTrack] = useState(0);
+	const videoRef = useRef<HTMLVideoElement | null>(null);
+
 	return (
 		<div className="min-h-screen bg-black text-white">
 			{/* Header with sticky nav */}
@@ -180,32 +184,57 @@ export default function AJEpk({ artist }: { artist: Artist }) {
 			)}
 
 			{artist.unreleased && artist.unreleased.length > 0 && (
-				<section id="unreleased" className="py-20 bg-zinc-900">
-					<div className="container mx-auto px-4">
-						<h2 className="text-5xl font-bold mb-12 text-center text-white">
-							<span className="text-amber-400">Unreleased</span> Tracks
+				<section id="unreleased" className="py-14">
+					<div className="container mx-auto px-4 max-w-4xl">
+						<h2 className="text-3xl font-bold mb-6 text-center ">
+							<span className="text-amber-500">Unreleased</span> Tracks
 						</h2>
 
-						<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-							{artist.unreleased.map((track, index) => (
-								<div
-									key={index}
-									className="bg-zinc-800/80 backdrop-blur-sm p-6 rounded-3xl border border-amber-500/20 shadow-xl transition-shadow hover:shadow-amber-500/30"
-								>
-									<div className="flex items-center justify-between mb-4">
-										<p className="text-lg font-semibold text-amber-400">Track {index + 1}</p>
-										<span className="text-xs text-zinc-400">Preview only</span>
-									</div>
+						{/* MINI PLAYER */}
+						<div className="bg-white border border-amber-200 rounded-xl px-3 py-2 mb-4 shadow-sm">
+							<video
+								ref={videoRef}
+								src={artist.unreleased[activeTrack]}
+								controls
+								controlsList="nodownload noremoteplayback nofullscreen"
+								onContextMenu={(e) => e.preventDefault()}
+								className="w-full h-9 rounded"
+							/>
+						</div>
 
-									<video
-										src={track}
-										controls
-										controlsList="nodownload noremoteplayback nofullscreen"
-										onContextMenu={(e) => e.preventDefault()}
-										className="w-full h-48 rounded-2xl border border-amber-500/20 bg-black shadow-inner"
-									/>
-								</div>
-							))}
+						{/* TRACK LIST */}
+						<div className="bg-white border border-amber-200 rounded-xl divide-y overflow-hidden shadow-sm">
+							{artist.unreleased.map((_, index) => {
+								const isActive = index === activeTrack;
+
+								return (
+									<button
+										key={index}
+										onClick={() => {
+											setActiveTrack(index);
+											setTimeout(() => videoRef.current?.play(), 0);
+										}}
+										className={`w-full flex items-center justify-between px-4 py-3 text-left transition
+								${isActive ? 'bg-amber-50' : 'hover:bg-orange-50'}`}
+									>
+										<div className="flex items-center gap-3">
+											<div
+												className={`w-8 h-8 flex items-center justify-center rounded-full text-sm
+									${isActive ? 'bg-amber-500 text-white' : 'bg-gray-200 text-gray-600'}`}
+											>
+												{isActive ? '❚❚' : '▶'}
+											</div>
+
+											<div>
+												<p className={`text-sm font-medium ${isActive ? 'text-amber-600' : 'text-gray-800'}`}>Track {index + 1}</p>
+												<p className="text-[11px] text-gray-500">Preview only</p>
+											</div>
+										</div>
+
+										<Sparkles className={`w-4 h-4 ${isActive ? 'text-amber-500' : 'text-gray-300'}`} />
+									</button>
+								);
+							})}
 						</div>
 					</div>
 				</section>
