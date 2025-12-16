@@ -103,7 +103,7 @@ export default function EventsList() {
 				{/* Header */}
 				<div className={`text-center mb-12 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
 					<h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Upcoming Events</h2>
-					<p className="text-lg text-slate-300">Performances by Vivek Morvadia</p>
+					<p className="text-lg text-slate-300">Performances by our Artists</p>
 				</div>
 
 				{/* Simple List */}
