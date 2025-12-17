@@ -43,7 +43,7 @@ export const artists: Artist[] = [
 		socials: {
 			spotify: 'https://open.spotify.com/artist/6s3Rdf9GgWkDMjIpWhRkgZ',
 			youtube: 'https://www.youtube.com/@BillionEntertainment',
-			instagram: 'https://www.instagram.com/vivek_morvadia',
+			instagram: 'https://www.instagram.com/vivekmorvadiaofficial/',
 		},
 		topTracks: ['Sirf Tu', 'Bikhre Armaan (Upcoming)'],
 		upcomingReleases: ['Bikhre Armaan - October 10th', '6-Track EP - November 2025'],

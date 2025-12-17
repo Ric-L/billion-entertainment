@@ -1,314 +1,3 @@
-// 'use client';
-
-// import type React from 'react';
-
-// import { useState, useEffect, useRef } from 'react';
-// import { Card, CardContent } from '@/components/ui/card';
-// import { Button } from '@/components/ui/button';
-// import { Instagram, Youtube, ExternalLink, ChevronLeft, ChevronRight } from 'lucide-react';
-// import Image from 'next/image';
-// import Link from 'next/link';
-// import { Artist } from '@/lib/artist-data';
-// import { getAllArtists } from '@/lib/artist';
-// import { useRouter } from 'next/navigation';
-
-// export default function ArtistShowcase() {
-// 	const router = useRouter();
-
-// 	const [isVisible, setIsVisible] = useState(false);
-// 	const [hoveredArtist, setHoveredArtist] = useState<string | null>(null);
-// 	const [expanded, setExpanded] = useState<string | null>(null);
-// 	const [currentIndex, setCurrentIndex] = useState(0);
-// 	const sectionRef = useRef<HTMLElement>(null);
-// 	const scrollContainerRef = useRef<HTMLDivElement>(null);
-// 	const artists: Artist[] = getAllArtists();
-
-// 	useEffect(() => {
-// 		const observer = new IntersectionObserver(
-// 			([entry]) => {
-// 				if (entry.isIntersecting) setIsVisible(true);
-// 			},
-// 			{ threshold: 0.1 }
-// 		);
-// 		if (sectionRef.current) observer.observe(sectionRef.current);
-// 		return () => observer.disconnect();
-// 	}, []);
-
-// 	const handleSocialClick = (e: React.MouseEvent, url?: string) => {
-// 		e.stopPropagation();
-// 		if (url) window.open(url, '_blank', 'noopener,noreferrer');
-// 	};
-
-// 	const next = () => {
-// 		setCurrentIndex((prev) => (prev + 1) % artists.length);
-// 	};
-
-// 	const prev = () => {
-// 		setCurrentIndex((prev) => (prev - 1 + artists.length) % artists.length);
-// 	};
-
-// 	const scrollLeft = () => {
-// 		if (scrollContainerRef.current) {
-// 			scrollContainerRef.current.scrollBy({ left: -300, behavior: 'smooth' });
-// 		}
-// 	};
-
-// 	const scrollRight = () => {
-// 		if (scrollContainerRef.current) {
-// 			scrollContainerRef.current.scrollBy({ left: 300, behavior: 'smooth' });
-// 		}
-// 	};
-
-// 	const getCardPosition = (index: number) => {
-// 		const total = artists.length;
-
-// 		// circular distance
-// 		let offset = index - currentIndex;
-
-// 		if (offset > total / 2) offset -= total;
-// 		if (offset < -total / 2) offset += total;
-
-// 		const absOffset = Math.abs(offset);
-
-// 		const horizontalSpacing = 420;
-// 		const translateX = offset * horizontalSpacing;
-
-// 		const translateZ = -Math.pow(absOffset, 1.8) * 200;
-// 		const rotateY = offset * 15;
-// 		const opacity = absOffset > 3 ? 0 : 1 - absOffset * 0.2;
-
-// 		return { translateX, translateZ, rotateY, opacity };
-// 	};
-
-// 	return (
-// 		<section ref={sectionRef} className="py-16 md:py-24 px-4 bg-black pb-24 md:pb-32 overflow-hidden">
-// 			<div className="w-full mx-auto" style={{ maxWidth: '100vw' }}>
-// 				<div
-// 					className={`text-center pb-24 md:mb-16 transition-all duration-1000 ${
-// 						isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-// 					}`}
-// 				>
-// 					<h2 className="text-4xl md:text-6xl font-bold mb-4 text-white">OUR ARTISTS</h2>
-// 				</div>
-
-// 				<div className="hidden md:block relative w-full mb-12" style={{ height: '600px' }}>
-// 					<div className="absolute inset-0 flex items-center justify-center overflow-visible" style={{ perspective: '1500px' }}>
-// 						<div className="relative w-full h-full" style={{ transformStyle: 'preserve-3d' }}>
-// 							{artists.map((artist, index) => {
-// 								const { translateX, translateZ, rotateY, opacity } = getCardPosition(index);
-
-// 								return (
-// 									<div
-// 										key={artist.id}
-// 										className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transition-all duration-700 ease-out"
-// 										style={{
-// 											transform: `translateX(${translateX}px) translateZ(${translateZ}px) rotateY(${rotateY}deg)`,
-// 											transformStyle: 'preserve-3d',
-// 											opacity,
-// 											pointerEvents: Math.abs(index - currentIndex) > 2 ? 'none' : 'auto',
-// 										}}
-// 									>
-// 										<ArtistCard
-// 											artist={artist}
-// 											hoveredArtist={hoveredArtist}
-// 											setHoveredArtist={setHoveredArtist}
-// 											expanded={expanded}
-// 											setExpanded={setExpanded}
-// 											handleSocialClick={handleSocialClick}
-// 											isDesktop
-// 											isCenterCard={index === currentIndex}
-// 										/>
-// 									</div>
-// 								);
-// 							})}
-// 						</div>
-// 					</div>
-
-// 					<Button
-// 						size="icon"
-// 						variant="secondary"
-// 						className="absolute left-8 top-1/2 -translate-y-1/2 h-14 w-14 rounded-full bg-white/90 hover:bg-white text-black backdrop-blur-md shadow-xl border-2 border-gray-200"
-// 						style={{ zIndex: 50 }}
-// 						onClick={prev}
-// 					>
-// 						<ChevronLeft className="h-7 w-7" />
-// 					</Button>
-// 					<Button
-// 						size="icon"
-// 						variant="secondary"
-// 						className="absolute right-8 top-1/2 -translate-y-1/2 h-14 w-14 rounded-full bg-white/90 hover:bg-white text-black backdrop-blur-md shadow-xl border-2 border-gray-200"
-// 						style={{ zIndex: 50 }}
-// 						onClick={next}
-// 					>
-// 						<ChevronRight className="h-7 w-7" />
-// 					</Button>
-// 				</div>
-
-// 				<div className="md:hidden relative mb-12">
-// 					<div
-// 						ref={scrollContainerRef}
-// 						className="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 -mx-4 px-4"
-// 						style={{
-// 							msOverflowStyle: 'none',
-// 							scrollbarWidth: 'none',
-// 						}}
-// 					>
-// 						{artists.map((artist) => (
-// 							<div key={artist.id} className="flex-none w-80 snap-center first:pl-4 last:pr-4">
-// 								<ArtistCard
-// 									artist={artist}
-// 									hoveredArtist={hoveredArtist}
-// 									setHoveredArtist={setHoveredArtist}
-// 									expanded={expanded}
-// 									setExpanded={setExpanded}
-// 									handleSocialClick={handleSocialClick}
-// 									isMobile
-// 								/>
-// 							</div>
-// 						))}
-// 					</div>
-
-// 					<Button
-// 						size="icon"
-// 						variant="secondary"
-// 						className="absolute left-2 top-1/2 -translate-y-1/2 z-10 h-12 w-12 rounded-full bg-black/60 backdrop-blur-md"
-// 						onClick={scrollLeft}
-// 					>
-// 						<ChevronLeft className="h-6 w-6" />
-// 					</Button>
-// 					<Button
-// 						size="icon"
-// 						variant="secondary"
-// 						className="absolute right-2 top-1/2 -translate-y-1/2 z-10 h-12 w-12 rounded-full bg-black/60 backdrop-blur-md"
-// 						onClick={scrollRight}
-// 					>
-// 						<ChevronRight className="h-6 w-6" />
-// 					</Button>
-// 				</div>
-// 			</div>
-// 		</section>
-// 	);
-// }
-
-// function ArtistCard({
-// 	artist,
-// 	hoveredArtist,
-// 	setHoveredArtist,
-// 	expanded,
-// 	setExpanded,
-// 	handleSocialClick,
-// 	isMobile = false,
-// 	isDesktop = false,
-// 	isCenterCard = false,
-// }: {
-// 	artist: Artist;
-// 	hoveredArtist: string | null;
-// 	setHoveredArtist: (id: string | null) => void;
-// 	expanded: string | null;
-// 	setExpanded: (id: string | null) => void;
-// 	handleSocialClick: (e: React.MouseEvent, url?: string) => void;
-// 	isMobile?: boolean;
-// 	isDesktop?: boolean;
-// 	isCenterCard?: boolean;
-// }) {
-// 	const isHovered = hoveredArtist === artist.id || isMobile;
-// 	const router = useRouter();
-// 	// const cardClasses = `
-// 	//   group overflow-hidden border-2 border-gray-800 hover:border-gray-600
-// 	//   transition-all duration-500 bg-gray-900/80 backdrop-blur-md hover:shadow-2xl
-// 	//   w-80 flex flex-col
-// 	//   ${isCenterCard && isDesktop ? "scale-110 border-white/30 shadow-2xl" : ""}
-// 	// `;
-
-// 	const cardClasses = `
-//   group relative overflow-hidden
-//   border-2 border-gray-800 hover:border-gray-600
-//   transition-all duration-500
-//   bg-black
-//   hover:shadow-2xl
-//   w-80 h-[450px]
-//   p-0
-//   ${isCenterCard && isDesktop ? 'scale-110 border-white/30 shadow-2xl' : ''}
-// `;
-
-// 	return (
-// 		<Card
-// 			onClick={() => router.push(`/artists/${artist.id}`)}
-// 			className={cardClasses}
-// 			style={{ height: '450px' }}
-// 			onMouseEnter={() => !isMobile && setHoveredArtist(artist.id)}
-// 			onMouseLeave={() => !isMobile && setHoveredArtist(null)}
-// 		>
-// 			<div className="relative overflow-hidden h-full">
-// 				<Image
-// 					src={artist.image || artist.heroImage}
-// 					alt={artist.name}
-// 					fill
-// 					className="object-cover transition-transform duration-700 group-hover:scale-110"
-// 					sizes="(max-width: 768px) 80vw, 320px"
-// 				/>
-
-// 				<div className="absolute inset-0 bg-gradient-to-t from-black/0 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
-
-// 				{/* Artist name overlay */}
-// 				<h3 className="absolute bottom-6 left-1/2 -translate-x-1/2 text-2xl font-semibold text-white tracking-wide text-center px-4 py-1 bg-black/0 backdrop-blur-[3px] rounded-lg">
-// 					{artist.name.toUpperCase()}
-// 				</h3>
-
-// 				<div
-// 					className={`absolute top-4 right-4 flex flex-col gap-3 transition-all ${
-// 						isHovered ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
-// 					}`}
-// 					style={{ transitionDuration: '400ms' }}
-// 				>
-// 					{artist.socials.instagram && (
-// 						<Button
-// 							size="icon"
-// 							variant="secondary"
-// 							className="h-10 w-10 bg-black/70 hover:bg-black/90 backdrop-blur-md "
-// 							onClick={(e) => {
-// 								e.stopPropagation();
-// 								handleSocialClick(e, artist.socials.instagram);
-// 							}}
-// 						>
-// 							<Instagram className="h-5 w-5" />
-// 						</Button>
-// 					)}
-
-// 					{artist.socials.youtube && (
-// 						<Button
-// 							size="icon"
-// 							variant="secondary"
-// 							className="h-10 w-10 bg-black/70 hover:bg-black/90 backdrop-blur-md"
-// 							onClick={(e) => {
-// 								e.stopPropagation();
-// 								handleSocialClick(e, artist.socials.youtube);
-// 							}}
-// 						>
-// 							<Youtube className="h-5 w-5" />
-// 						</Button>
-// 					)}
-// 				</div>
-// 			</div>
-
-// 			{/* <CardContent className="p-6 flex flex-col flex-grow">
-//         <h3 className="text-2xl font-semibold mb-2 text-center text-white tracking-wide">{artist.name.toUpperCase()}</h3>
-
-//         {artist.bio.length > 150 && (
-//           <button
-//             onClick={(e) => {
-//               e.stopPropagation();
-//               setExpanded(expanded === artist.id ? null : artist.id);
-//             }}
-//             className="text-sm text-blue-400 hover:text-blue-300 mt-3 mb-4 self-start transition-colors"
-//           >
-//             {expanded === artist.id ? "See Less" : "See More"}
-//           </button>
-//         )}
-//       </CardContent> */}
-// 		</Card>
-// 	);
-// }
 'use client';
 
 import type React from 'react';
@@ -317,8 +6,7 @@ import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Instagram, Youtube, ChevronLeft, ChevronRight } from 'lucide-react';
 import Image from 'next/image';
-import { Artist } from '@/lib/artist-data';
-import { getAllArtists } from '@/lib/artist';
+import { Artist, getAllArtists } from '@/lib/artist';
 import { useRouter } from 'next/navigation';
 
 export default function ArtistShowcase() {
@@ -326,10 +14,9 @@ export default function ArtistShowcase() {
 	const sectionRef = useRef<HTMLElement>(null);
 
 	const [isVisible, setIsVisible] = useState(false);
-	const [hoveredArtist, setHoveredArtist] = useState<string | null>(null);
 	const [currentIndex, setCurrentIndex] = useState(0);
 
-	// 👉 Swipe refs
+	// Swipe refs
 	const startX = useRef(0);
 	const isDragging = useRef(false);
 
@@ -341,14 +28,12 @@ export default function ArtistShowcase() {
 		return () => observer.disconnect();
 	}, []);
 
-	const next = () => {
-		setCurrentIndex((prev) => (prev + 1) % artists.length);
-	};
+	const next = () => setCurrentIndex((prev) => (prev + 1) % artists.length);
+	const prev = () => setCurrentIndex((prev) => (prev - 1 + artists.length) % artists.length);
 
-	const prev = () => {
-		setCurrentIndex((prev) => (prev - 1 + artists.length) % artists.length);
-	};
-
+	/* ===============================
+	   SOCIAL CLICK HANDLER
+	   =============================== */
 	const handleSocialClick = (e: React.MouseEvent, url?: string) => {
 		e.stopPropagation();
 		if (url) window.open(url, '_blank', 'noopener,noreferrer');
@@ -362,16 +47,11 @@ export default function ArtistShowcase() {
 		startX.current = 'touches' in e ? e.touches[0].clientX : e.clientX;
 	};
 
-	const onTouchMove = (e: React.TouchEvent | React.MouseEvent) => {
-		if (!isDragging.current) return;
-	};
-
 	const onTouchEnd = (e: React.TouchEvent | React.MouseEvent) => {
 		if (!isDragging.current) return;
 		isDragging.current = false;
 
 		const endX = 'changedTouches' in e ? e.changedTouches[0].clientX : e.clientX;
-
 		const delta = endX - startX.current;
 
 		if (Math.abs(delta) > 50) {
@@ -384,22 +64,21 @@ export default function ArtistShowcase() {
 	   =============================== */
 	const getCardPosition = (index: number, isMobile = false) => {
 		const total = artists.length;
-
 		let offset = index - currentIndex;
+
 		if (offset > total / 2) offset -= total;
 		if (offset < -total / 2) offset += total;
 
 		const absOffset = Math.abs(offset);
-
 		const spacing = isMobile ? 280 : 420;
-		const translateX = offset * spacing;
 
-		const translateZ = isMobile ? -Math.pow(absOffset, 1.4) * 120 : -Math.pow(absOffset, 1.8) * 200;
-
-		const rotateY = isMobile ? offset * 8 : offset * 15;
-		const opacity = absOffset > (isMobile ? 2 : 3) ? 0 : 1 - absOffset * 0.25;
-
-		return { translateX, translateZ, rotateY, opacity, offset };
+		return {
+			offset,
+			translateX: offset * spacing,
+			translateZ: isMobile ? -Math.pow(absOffset, 1.4) * 120 : -Math.pow(absOffset, 1.8) * 200,
+			rotateY: isMobile ? offset * 8 : offset * 15,
+			opacity: absOffset > (isMobile ? 2 : 3) ? 0 : 1 - absOffset * 0.25,
+		};
 	};
 
 	return (
@@ -422,19 +101,15 @@ export default function ArtistShowcase() {
 				</h2>
 			</div>
 
-			{/* ===============================
-			   DESKTOP
-			   =============================== */}
+			{/* DESKTOP */}
 			<div className="hidden md:block relative w-full h-[600px]">
-				<Carousel artists={artists} getCardPosition={getCardPosition} />
+				<Carousel artists={artists} getCardPosition={getCardPosition} onSocialClick={handleSocialClick} />
 				<Controls onPrev={prev} onNext={next} />
 			</div>
 
-			{/* ===============================
-			   MOBILE
-			   =============================== */}
+			{/* MOBILE */}
 			<div className="md:hidden relative w-full h-[520px]">
-				<Carousel artists={artists} getCardPosition={(i) => getCardPosition(i, true)} />
+				<Carousel artists={artists} getCardPosition={(i) => getCardPosition(i, true)} onSocialClick={handleSocialClick} />
 				<Controls onPrev={prev} onNext={next} />
 			</div>
 		</section>
@@ -444,7 +119,15 @@ export default function ArtistShowcase() {
 /* ===============================
    CAROUSEL
    =============================== */
-function Carousel({ artists, getCardPosition }: { artists: Artist[]; getCardPosition: (index: number) => any }) {
+function Carousel({
+	artists,
+	getCardPosition,
+	onSocialClick,
+}: {
+	artists: Artist[];
+	getCardPosition: (index: number) => any;
+	onSocialClick: (e: React.MouseEvent, url?: string) => void;
+}) {
 	const [hoveredArtist, setHoveredArtist] = useState<string | null>(null);
 
 	return (
@@ -463,7 +146,13 @@ function Carousel({ artists, getCardPosition }: { artists: Artist[]; getCardPosi
 								pointerEvents: Math.abs(offset) > 2 ? 'none' : 'auto',
 							}}
 						>
-							<ArtistCard artist={artist} isCenter={offset === 0} hoveredArtist={hoveredArtist} setHoveredArtist={setHoveredArtist} />
+							<ArtistCard
+								artist={artist}
+								isCenter={offset === 0}
+								hoveredArtist={hoveredArtist}
+								setHoveredArtist={setHoveredArtist}
+								onSocialClick={onSocialClick}
+							/>
 						</div>
 					);
 				})}
@@ -480,14 +169,15 @@ function ArtistCard({
 	isCenter,
 	hoveredArtist,
 	setHoveredArtist,
+	onSocialClick,
 }: {
 	artist: Artist;
 	isCenter: boolean;
 	hoveredArtist: string | null;
 	setHoveredArtist: (id: string | null) => void;
+	onSocialClick: (e: React.MouseEvent, url?: string) => void;
 }) {
 	const router = useRouter();
-	const isHovered = hoveredArtist === artist.id;
 
 	return (
 		<Card
@@ -511,14 +201,15 @@ function ArtistCard({
 				{artist.name.toUpperCase()}
 			</h3>
 
-			<div className={`absolute top-4 right-4 flex flex-col gap-3 `}>
+			<div className="absolute top-4 right-4 flex flex-col gap-3">
 				{artist.socials.instagram && (
-					<Button size="icon" className="bg-black/70">
+					<Button size="icon" className="bg-black/70 hover:bg-black" onClick={(e) => onSocialClick(e, artist.socials.instagram)}>
 						<Instagram />
 					</Button>
 				)}
+
 				{artist.socials.youtube && (
-					<Button size="icon" className="bg-black/70">
+					<Button size="icon" className="bg-black/70 hover:bg-black" onClick={(e) => onSocialClick(e, artist.socials.youtube)}>
 						<Youtube />
 					</Button>
 				)}

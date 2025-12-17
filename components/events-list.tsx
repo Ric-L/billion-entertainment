@@ -230,3 +230,123 @@ export default function EventsList() {
 		</section>
 	);
 }
+// 'use client';
+
+// import { useEffect, useRef, useState } from 'react';
+// import { Calendar, MapPin, Clock, User } from 'lucide-react';
+
+// const events = [
+// 	{
+// 		id: 1,
+// 		title: 'AARADHYA THE DIVINE CIRCLE',
+// 		date: 'December 22, 2025',
+// 		time: 'Evening (7:00 PM)',
+// 		venue: 'Gujarat, India',
+// 		artist: 'VIVEK MORVADIA',
+// 		status: 'upcoming',
+// 	},
+// 	{
+// 		id: 2,
+// 		title: 'GUJARAT NATIONAL LAW UNIVERSITY',
+// 		date: 'December 23, 2025',
+// 		time: 'Evening (7:30 PM)',
+// 		venue: 'Gujarat, India',
+// 		artist: 'VIVEK MORVADIA',
+// 		status: 'upcoming',
+// 	},
+// 	{
+// 		id: 3,
+// 		title: 'HERITAGE',
+// 		date: 'December 25, 2025',
+// 		time: 'Evening (8:00 PM)',
+// 		venue: 'Gujarat, India',
+// 		artist: 'VIVEK MORVADIA',
+// 		status: 'upcoming',
+// 	},
+// 	{
+// 		id: 4,
+// 		title: 'NAGRI NA NORTA',
+// 		date: 'December 26, 2025',
+// 		time: 'Evening (7:30 PM)',
+// 		venue: 'Gujarat, India',
+// 		artist: 'VIVEK MORVADIA',
+// 		status: 'upcoming',
+// 	},
+// ];
+
+// export default function EventsList() {
+// 	const sectionRef = useRef<HTMLElement>(null);
+// 	const [isVisible, setIsVisible] = useState(false);
+
+// 	useEffect(() => {
+// 		const observer = new IntersectionObserver(([entry]) => entry.isIntersecting && setIsVisible(true), { threshold: 0.15 });
+
+// 		if (sectionRef.current) observer.observe(sectionRef.current);
+// 		return () => observer.disconnect();
+// 	}, []);
+
+// 	return (
+// 		<section ref={sectionRef} className="relative py-16 px-4 md:py-24 bg-black overflow-hidden">
+// 			{/* Static background (no fixed, no parallax) */}
+// 			<div
+// 				className="absolute inset-0 z-0"
+// 				style={{
+// 					backgroundImage: "url('/12232.jpg')",
+// 					backgroundSize: 'cover',
+// 					backgroundPosition: 'center',
+// 				}}
+// 			/>
+
+// 			{/* Single gradient overlay */}
+// 			<div className="absolute inset-0 z-0 bg-gradient-to-b from-black/80 via-black/85 to-black/95" />
+
+// 			<div className="relative z-10 max-w-3xl mx-auto">
+// 				{/* Header */}
+// 				<div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
+// 					<span className="inline-block mb-4 text-purple-400 font-semibold tracking-wider">SHOWS & EVENTS</span>
+// 					<h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Upcoming Events</h2>
+// 					<p className="text-slate-300">Experience mesmerizing performances by our talented artists</p>
+// 				</div>
+
+// 				{/* Events */}
+// 				<div className="space-y-8">
+// 					{events.map((event, index) => (
+// 						<div
+// 							key={event.id}
+// 							className={`transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+// 							style={{ transitionDelay: `${index * 80}ms` }}
+// 						>
+// 							<div className="bg-white/5 border border-white/10 rounded-2xl p-6 shadow-lg">
+// 								<div className="flex items-center gap-2 mb-4">
+// 									<span className="w-2 h-2 rounded-full bg-green-500" />
+// 									<span className="text-green-400 text-sm uppercase font-semibold">{event.status}</span>
+// 								</div>
+
+// 								<h3 className="text-xl font-bold text-white mb-6 text-center">{event.title}</h3>
+
+// 								<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+// 									<Info icon={<Calendar />} label="Date" value={event.date} />
+// 									<Info icon={<Clock />} label="Time" value={event.time} />
+// 									<Info icon={<MapPin />} label="Venue" value={event.venue} />
+// 									<Info icon={<User />} label="Artist" value={event.artist} />
+// 								</div>
+// 							</div>
+// 						</div>
+// 					))}
+// 				</div>
+// 			</div>
+// 		</section>
+// 	);
+// }
+
+// function Info({ icon, label, value }: any) {
+// 	return (
+// 		<div className="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10">
+// 			<div className="text-purple-400">{icon}</div>
+// 			<div>
+// 				<div className="text-xs text-slate-400">{label}</div>
+// 				<div className="text-white font-medium">{value}</div>
+// 			</div>
+// 		</div>
+// 	);
+// }
