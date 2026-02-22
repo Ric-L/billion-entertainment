@@ -1,8 +1,9 @@
 'use client';
 
-import type { Artist } from '@/lib/artists';
+
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
+import { Artist } from '@/lib/artist';
 import { Instagram, Youtube, Music, ArrowLeft, Mail, Sparkles } from 'lucide-react';
 import Link from 'next/link';
 import { useRef, useState } from 'react';
@@ -173,14 +174,13 @@ export default function VivekEPK({ artist }: { artist: Artist }) {
 				</section>
 			)}
 
-			{artist.unreleased && artist.unreleased.length > 0 && (
+			{/* {artist.unreleased && artist.unreleased.length > 0 && (
 				<section id="unreleased" className="py-14">
 					<div className="container mx-auto px-4 max-w-4xl">
 						<h2 className="text-3xl font-bold mb-6 text-center text-gray-900">
 							<span className="text-amber-500">Unreleased</span> Tracks
 						</h2>
 
-						{/* MINI PLAYER */}
 						<div className="bg-white border border-amber-200 rounded-xl px-3 py-2 mb-4 shadow-sm">
 							<video
 								ref={videoRef}
@@ -192,7 +192,6 @@ export default function VivekEPK({ artist }: { artist: Artist }) {
 							/>
 						</div>
 
-						{/* TRACK LIST */}
 						<div className="bg-white border border-amber-200 rounded-xl divide-y overflow-hidden shadow-sm">
 							{artist.unreleased.map((_, index) => {
 								const isActive = index === activeTrack;
@@ -228,7 +227,7 @@ export default function VivekEPK({ artist }: { artist: Artist }) {
 						</div>
 					</div>
 				</section>
-			)}
+			)} */}
 
 			{/* Influences */}
 			{artist.influences && (

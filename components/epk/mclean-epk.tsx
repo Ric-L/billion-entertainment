@@ -1,11 +1,12 @@
 'use client';
 
-import type { Artist } from '@/lib/artists';
+
 import { Button } from '@/components/ui/button';
 import { Instagram, Youtube, Music, ArrowLeft, Mail, Zap, Sparkles } from 'lucide-react';
 import Link from 'next/link';
 import ReactPlayer from 'react-player';
 import { useRef, useState } from 'react';
+import { Artist } from '@/lib/artist';
 
 export default function McLeanEPK({ artist }: { artist: Artist }) {
 	const [activeTrack, setActiveTrack] = useState(0);
@@ -136,7 +137,7 @@ export default function McLeanEPK({ artist }: { artist: Artist }) {
 					</div>
 				</section>
 			)}
-
+{/* 
 			{artist.unreleased && artist.unreleased.length > 0 && (
 				<section id="unreleased" className="py-14">
 					<div className="container mx-auto px-4 max-w-4xl">
@@ -144,7 +145,6 @@ export default function McLeanEPK({ artist }: { artist: Artist }) {
 							<span className="text-cyan-500">Unreleased Tracks</span>
 						</h2>
 
-						{/* MINI PLAYER */}
 						<div className="bg-white border border-amber-200 rounded-xl px-3 py-2 mb-4 shadow-sm">
 							<video
 								ref={videoRef}
@@ -156,7 +156,6 @@ export default function McLeanEPK({ artist }: { artist: Artist }) {
 							/>
 						</div>
 
-						{/* TRACK LIST */}
 						<div className="bg-white border border-amber-200 rounded-xl divide-y overflow-hidden shadow-sm">
 							{artist.unreleased.map((_, index) => {
 								const isActive = index === activeTrack;
@@ -192,7 +191,7 @@ export default function McLeanEPK({ artist }: { artist: Artist }) {
 						</div>
 					</div>
 				</section>
-			)}
+			)} */}
 
 			{/* Influences - Tech Style */}
 			<section className="py-24 bg-black/50">
